@@ -1,2 +1,4 @@
-# ML_HousePricingWeb
-Machine Learning implemented Web that suggests optimal price for traiding real-estate
+# achineLearningMF
+processing training data and compute theta, housing prices.
+modules
+-numpy
