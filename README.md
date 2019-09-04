@@ -1,4 +1,4 @@
-# achineLearningMF
+# MachineLearningMF
 processing training data and compute theta, housing prices.
 modules
 -numpy
