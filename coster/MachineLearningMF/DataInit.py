@@ -1,4 +1,4 @@
-import Loadcvs
+from ML_HousePricingWeb.coster.MachineLearningMF import Loadcvs
 import numpy as np
 
 class DataInit:

@@ -1,6 +1,5 @@
 import numpy as np
-import pandas as pd
-import runMachine
+from ML_HousePricingWeb.coster.MachineLearningMF import runMachine
 
 
 class GradientDescent:
