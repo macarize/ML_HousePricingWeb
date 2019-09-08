@@ -1,4 +1,4 @@
 # MachineLearningMF
-processing training data and compute theta, housing prices.
+processing training data then compute theta, housing prices.
 modules
 -numpy
