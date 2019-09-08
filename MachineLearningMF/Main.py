@@ -1,13 +1,13 @@
-import DataInit
-import AddBias
-import runMachine
-import GradientDescent
-import Normalization
+from ML_HousePricingWeb.coster.MachineLearningMF import DataInit
+from ML_HousePricingWeb.coster.MachineLearningMF import AddBias
+from ML_HousePricingWeb.coster.MachineLearningMF import runMachine
+from ML_HousePricingWeb.coster.MachineLearningMF import GradientDescent
+from ML_HousePricingWeb.coster.MachineLearningMF import Normalization
+from ML_HousePricingWeb.coster.MachineLearningMF import Converter
 import numpy as np
-import matplotlib.pyplot as plt
 
 
-Path = "C:\\Users\leehy\PycharmProjects\MachineLearningMF\ex1data2.txt"
+Path = "C:\\Users\leehy\Documents\GitHub\ML_HousePricingWeb\coster\MachineLearningMF\Data.txt"
 
 '''somethin somthin'''
 data = DataInit.DataInit()
@@ -33,7 +33,7 @@ theta = theta.reshape(1,3)
 print('Computed theta : {}'.format(theta))
 
 '''predicting housing price'''
-r = np.array([1650, 3])
+r = np.array([114.98, 5])
 r = (r - mu) / sigma
 r2 = np.ones(r.shape[0] + 1)
 r2[1:] = r
@@ -41,6 +41,7 @@ r = r2
 price = np.dot(r.reshape(1,3), theta.transpose())
 string = "Predicted price of a 1650 sq-ft, 3 br house (using gradient descent): " + str(price[0][0])
 print(string)
-
-
+print(theta)
+'''cl = Converter.DataLoad()
+cl.ConvertToCSV()'''
 
