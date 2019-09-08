@@ -1,5 +1,5 @@
 # MachineLearningMF
-processing training data then compute theta, housing prices.
+Process training data compromised with various features that crwaled from web and compute estimated housing price.
 modules
 <br>-numpy
 <br>-beautifulsoup
