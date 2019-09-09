@@ -39,32 +39,17 @@ def floor():
         for i in range(0, num - 1):
             items = soup.select('.num2 > .inner > span')[i].text.split()
             text = items[0]
-            result = text[:-3]
-            data.append(result)
-
+            if(len(text) != 3):
+                result = text[:-3]
+                if(result != '저' and result != '중' and result != '고'):
+                    data.append(result)
+            else:
+                result = text[0:-2]
+                data.append(result)
     return data
 
 #가격
 def price():
-    data = []
-    for page in range(1, 10):
-        print('page%d' % page)
-        link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
-        req = requests.get(link)
-        html = req.text
-        soup = BeautifulSoup(html, 'html.parser')
-
-        num = len(soup.select('.num > .inner > strong'))
-        for i in range(0, num - 1):
-            items = soup.select('.num > .inner > strong')[i].text.split()
-            text = items[0]
-            result = text[:-4]
-            result += '000'
-            data.append(result)
-
-    return data
-
-def test():
     data = []
     for page in range(1, 10):
         print('page%d' % page)
