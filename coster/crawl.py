@@ -41,7 +41,13 @@ def floor():
             text = items[0]
             if(len(text) != 3):
                 result = text[:-3]
-                if(result != '저' and result != '중' and result != '고'):
+                if result == '저':
+                    data.append(3)
+                elif result == '중':
+                    data.append(13)
+                elif result == '고':
+                    data.append(23)
+                else:
                     data.append(result)
             else:
                 result = text[0:-2]
@@ -69,9 +75,9 @@ def price():
     return data
 
 if __name__ == '__main__':
-    data1 = space()
-    print(data1)
+    # data1 = space()
+    # print(data1)
     data2 = floor()
     print(data2)
-    data3 = price()
-    print(data3)
+    # data3 = price()
+    # print(data3)
