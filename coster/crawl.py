@@ -5,7 +5,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "coster.settings")
 import django
 django.setup()
 # from .app.models import crawl
-
+import random
 #평수
 def space():
     data = []
@@ -42,16 +42,23 @@ def floor():
             if(len(text) != 3):
                 result = text[:-3]
                 if result == '저':
-                    data.append(3)
+                    data.append(random.randrange(1,11))
                 elif result == '중':
-                    data.append(13)
+                    data.append(random.randrange(11,21))
                 elif result == '고':
-                    data.append(23)
+                    data.append(random.randrange(21,31))
                 else:
                     data.append(result)
             else:
                 result = text[0:-2]
-                data.append(result)
+                if result == '저':
+                    data.append(random.randrange(1,11))
+                elif result == '중':
+                    data.append(random.randrange(11,21))
+                elif result == '고':
+                    data.append(random.randrange(21,31))
+                else:
+                    data.append(result)
     return data
 
 #가격
