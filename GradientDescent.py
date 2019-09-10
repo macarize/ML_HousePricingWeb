@@ -6,9 +6,7 @@ class GradientDescent:
     ml = runMachine.runMachine()
     def runGradient(self, data , theta, alpha, iter):
         X = data.x
-        print(X)
         Y = data.y
-        #X[:, 1] = np.power(X[:,1],2)
         m = data.m
         J_history = np.zeros((iter, 1),dtype=int)
 

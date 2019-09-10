@@ -10,15 +10,11 @@ class DataLoad:
     qubic = []
     floor = []
     price = []
-    '''''''[qubic, floor, price] = cl.crawlRun()'''
+    ''''[qubic, floor, price] = cl.crawlRun()'''
 
     qubic = np.array(qubic)
     floor = np.array(floor)
     price = np.array(price)
-
-    '''qubic.astype(float)
-    floor.astype(float)
-    price.astype(float)'''
 
     qubic = qubic.reshape(qubic.size, 1)
     floor = floor.reshape(floor.size, 1)
