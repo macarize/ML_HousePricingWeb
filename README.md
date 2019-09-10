@@ -1,2 +1,9 @@
 # ML_HousePricingWeb
-Machine Learning implemented Web that suggests optimal price for traiding real-estate
+Process training data compromised with various features that crwaled from web and compute estimated housing price.
+<br>
+<br>
+<b>Used modules</b>
+<br>-numpy
+<br>-beautifulsoup
+<br>-requests
+<br>-Django
