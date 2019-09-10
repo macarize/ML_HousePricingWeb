@@ -1,5 +1,5 @@
 import numpy as np
-from ML_HousePricingWeb.coster.MachineLearningMF import runMachine
+from MachineLearningMF import runMachine
 
 
 class GradientDescent:

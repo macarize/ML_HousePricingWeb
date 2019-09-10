@@ -1,24 +1,20 @@
 import sys
 import numpy as np
-sys.path.insert(0, 'C:\\Users\leehy\Documents\GitHub\ML_HousePricingWeb\coster\web\crawl.py')
+sys.path.insert(0, '..\MachineLearningMF\crawl.py')
 import crawl
 import re
 
 class DataLoad:
-    cl = crawl.crawl()
+    '''cl = crawl.crawl()'''
 
     qubic = []
     floor = []
     price = []
-    [qubic, floor, price] = cl.crawlRun()
+    ''''[qubic, floor, price] = cl.crawlRun()'''
 
     qubic = np.array(qubic)
     floor = np.array(floor)
     price = np.array(price)
-
-    '''qubic.astype(float)
-    floor.astype(float)
-    price.astype(float)'''
 
     qubic = qubic.reshape(qubic.size, 1)
     floor = floor.reshape(floor.size, 1)
