@@ -10,7 +10,6 @@ import random
 def space():
     data = []
     for page in range(1, 10):
-        print('page%d' % page)
         link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
         req = requests.get(link)
         html = req.text
@@ -29,7 +28,6 @@ def space():
 def floor():
     data = []
     for page in range(1, 10):
-        print('page%d' % page)
         link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
         req = requests.get(link)
         html = req.text
@@ -65,7 +63,6 @@ def floor():
 def price():
     data = []
     for page in range(1, 10):
-        print('page%d' % page)
         link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
         req = requests.get(link)
         html = req.text
@@ -82,9 +79,9 @@ def price():
     return data
 
 if __name__ == '__main__':
-    # data1 = space()
-    # print(data1)
+    data1 = space()
+    print(len(data1))
     data2 = floor()
-    print(data2)
-    # data3 = price()
-    # print(data3)
+    print(len(data2))
+    data3 = price()
+    print(len(data3))

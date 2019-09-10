@@ -7,6 +7,21 @@ def index(request):
     test = 'test'
     return render(request, 'index.html', {'test': test})
 
+def login(request):
+    if request.method == 'POST':
+        id = request.POST.get('id')
+        pw = request.POST.get('pw')
+        for u in user.objects.all():
+            if(u.id == id and u.pw == pw):
+                request.session['login'] = u.id
+        return redirect(index)
+    else:
+        return HttpResponse('login fail')
+
+def logout(request):
+    del request.session['login']
+    return redirect('index')
+
 def prediction(request):
     if request.method == 'POST':
         return HttpResponse('PREDICTION RUNNING')
