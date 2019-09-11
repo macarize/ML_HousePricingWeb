@@ -1,5 +1,5 @@
 import numpy as np
-from MachineLearningMF import runMachine
+from . import runMachine
 
 
 class GradientDescent:
