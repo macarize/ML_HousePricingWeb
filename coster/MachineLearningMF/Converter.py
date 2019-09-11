@@ -1,7 +1,7 @@
 import sys
 import numpy as np
 sys.path.insert(0, '..\MachineLearningMF\crawl.py')
-import crawl
+# import crawl
 import re
 
 class DataLoad:

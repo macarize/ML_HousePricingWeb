@@ -1,4 +1,4 @@
-from MachineLearningMF import Loadcvs
+from . import Loadcvs
 import numpy as np
 
 class DataInit:

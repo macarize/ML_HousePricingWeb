@@ -2,10 +2,22 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import *
+from MachineLearningMF import Main
 
 def index(request):
-    test = 'test'
-    return render(request, 'index.html', {'test': test})
+    return render(request, 'index.html')
+
+# def signup(request):
+#     if request.method == 'POST':
+#         id = request.POST.get('id')
+#         pw = request.POST.get('pw')
+#         name = request.POST.get('name')
+#         print(dic)
+#
+#         return render(request, 'consultantProcessing.html', {'result': result})
+#     else:
+#         form = signup()
+#         return render(request, 'consultant.html', {'form': form})
 
 def login(request):
     if request.method == 'POST':
@@ -32,11 +44,11 @@ def consultant(request):
     if request.method == 'POST':
         space = request.POST.get('space')
         floor = request.POST.get('floor')
-        price = request.POST.get('price')
-        print(space)
-        dic = {'space': space, 'floor': floor, 'price': price}
+        dic = {'space': space, 'floor': floor}
         print(dic)
-        return render(request, 'consultantProcessing.html', dic)
+
+        result = mlTest.ml(space, floor)
+        return render(request, 'consultantProcessing.html', {'result': result})
     else:
         form = consultantForm()
         return render(request, 'consultant.html', {'form': form})

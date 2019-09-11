@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
+    'MachineLearningMF',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,6 @@ DATABASES = {
         'PASSWORD': '1111',
         'HOST': 'localhost',
         'PORT': '3306'
-
     }
 }
 

@@ -5,7 +5,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "coster.settings")
 '''import django
 django.setup()'''
 # from .app.models import crawl
-<<<<<<< HEAD
 import random
 #평수
 def space():
@@ -15,15 +14,12 @@ def space():
         req = requests.get(link)
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
-=======
->>>>>>> a81bbba95c07ab90a6db4ac7a28ef6e2e1042f56
-
 
 class crawl:
     #평수
     def space(self):
         data = []
-        for page in range(1, 10:
+        for page in range(1, 10):
             print('page%d' % page)
             link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
             req = requests.get(link)
@@ -50,7 +46,6 @@ class crawl:
             html = req.text
             soup = BeautifulSoup(html, 'html.parser')
 
-<<<<<<< HEAD
 #층수
 def floor():
     data = []
@@ -59,8 +54,6 @@ def floor():
         req = requests.get(link)
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
-=======
->>>>>>> a81bbba95c07ab90a6db4ac7a28ef6e2e1042f56
 
         num = len(soup.select('.num2 > .inner > span'))
         for i in range(0, num - 1):
@@ -87,8 +80,6 @@ def floor():
                 else:
                     data.append(result)
     return data
-
-<<<<<<< HEAD
 #가격
 def price():
     data = []
@@ -97,7 +88,7 @@ def price():
         req = requests.get(link)
         html = req.text
         soup = BeautifulSoup(html, 'html.parser')
-=======
+
     #가격
     def price(self):
         data = []
@@ -107,7 +98,6 @@ def price():
             req = requests.get(link)
             html = req.text
             soup = BeautifulSoup(html, 'html.parser')
->>>>>>> a81bbba95c07ab90a6db4ac7a28ef6e2e1042f56
 
             num = len(soup.select('.num > .inner > strong'))
             for i in range(0, num - 1):
@@ -120,7 +110,6 @@ def price():
 
         return data
 
-<<<<<<< HEAD
 if __name__ == '__main__':
     data1 = space()
     print(len(data1))
@@ -128,10 +117,9 @@ if __name__ == '__main__':
     print(len(data2))
     data3 = price()
     print(len(data3))
-=======
+    
     def crawlRun(self):
         qubic = self.space()
         floor = self.floor()
         price = self.price()
         return [qubic, floor, price]
->>>>>>> a81bbba95c07ab90a6db4ac7a28ef6e2e1042f56
