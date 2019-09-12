@@ -7,17 +7,19 @@ from MachineLearningMF import Main
 def index(request):
     return render(request, 'index.html')
 
-# def signup(request):
-#     if request.method == 'POST':
-#         id = request.POST.get('id')
-#         pw = request.POST.get('pw')
-#         name = request.POST.get('name')
-#         print(dic)
-#
-#         return render(request, 'consultantProcessing.html', {'result': result})
-#     else:
-#         form = signup()
-#         return render(request, 'consultant.html', {'form': form})
+def signup(request):
+    if request.method == 'POST':
+        id = request.POST.get('id')
+        pw = request.POST.get('pw')
+        name = request.POST.get('name')
+
+        info = user(id = id, pw = pw, name = name)
+        info.save()
+
+        return redirect(index)
+    else:
+        form = signupForm()
+        return render(request, 'signup.html', {'form': form})
 
 def login(request):
     if request.method == 'POST':
