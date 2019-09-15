@@ -29,7 +29,7 @@ class crawl:
         return data
 
     #층수
-    def floor():
+    def floor(self):
         data = []
         for page in range(1, 10):
             link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
@@ -88,4 +88,7 @@ class crawl:
         qubic = self.space()
         floor = self.floor()
         price = self.price()
+
+        print('Crawling Success')
+
         return [qubic, floor, price]
