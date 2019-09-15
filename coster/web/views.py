@@ -9,12 +9,13 @@ def index(request):
 
 def signup(request):
     if request.method == 'POST':
+        #get user info
         id = request.POST.get('id')
         pw = request.POST.get('pw')
         name = request.POST.get('name')
 
         info = user(id = id, pw = pw, name = name)
-        info.save()
+        info.save() #insert user info
 
         return redirect(index)
     else:
@@ -23,8 +24,11 @@ def signup(request):
 
 def login(request):
     if request.method == 'POST':
+        #get id and pw entered
         id = request.POST.get('id')
         pw = request.POST.get('pw')
+
+        #select and compare user info
         for u in user.objects.all():
             if(u.id == id and u.pw == pw):
                 request.session['login'] = u.id
@@ -33,24 +37,22 @@ def login(request):
         return HttpResponse('login fail')
 
 def logout(request):
-    del request.session['login']
+    del request.session['login'] #delete a login session
     return redirect('index')
-
-def prediction(request):
-    if request.method == 'POST':
-        return HttpResponse('PREDICTION RUNNING')
-    else:
-        return HttpResponse('PREDICTION')
 
 def consultant(request):
     if request.method == 'POST':
+        #get customer's house info
         space = request.POST.get('space')
         floor = request.POST.get('floor')
         dic = {'space': space, 'floor': floor}
         print(dic)
 
-        result = mlTest.ml(space, floor)
-        return render(request, 'consultantProcessing.html', {'result': result})
+        result = Main.ml(space, floor) #enter into ML model
+        # dic = {
+        #
+        # }
+        return render(request, 'consultantResult.html', {'result': result})
     else:
         form = consultantForm()
-        return render(request, 'consultant.html', {'form': form})
+        return render(request, 'consultant.html', {'form': form, 'login': request.session.get('login', 'no')})

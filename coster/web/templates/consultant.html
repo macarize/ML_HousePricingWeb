@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--jquery 3.4.1 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- bootstrap 3.3.2 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <form method="POST">
+    <form method="POST" onsubmit="return check()">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">RUN</button>
+        <button type="submit" class="run">RUN</button>
     </form>
 </body>
 </html>
+
+<script>
+  //Login Check
+  function check(){
+    if({{login}} != null){
+      return true;
+    }else{
+      alert("로그인이 필요한 서비스입니다.");
+      return false;
+    }
+  }
+</script>

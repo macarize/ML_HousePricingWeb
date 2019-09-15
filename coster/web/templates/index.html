@@ -26,8 +26,6 @@
         <h1>COSTER</h1>
     </div>
     <div class="section">
-        <button class="prediction">QUOTIENT PREDICTION</button>
-        <br>
         <button class="consultant">CONSULTANT</button>
         <br>
         {{ request.session.login }}
@@ -68,9 +66,6 @@
 </html>
 
 <script>
-    $('.prediction').click(function(){
-        location.href = '/web/prediction'
-    })
     $('.consultant').click(function(){
         location.href = '/web/consultant'
     })
