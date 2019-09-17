@@ -5,6 +5,20 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "coster.settings")
 '''import django
 django.setup()'''
 # from .app.models import crawl
+<<<<<<< HEAD
+import random
+#평수
+def space():
+    data = []
+    for page in range(1, 10):
+        link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
+        req = requests.get(link)
+        html = req.text
+        soup = BeautifulSoup(html, 'html.parser')
+=======
+>>>>>>> a81bbba95c07ab90a6db4ac7a28ef6e2e1042f56
+
+
 class crawl:
     #평수
     def space(self):
