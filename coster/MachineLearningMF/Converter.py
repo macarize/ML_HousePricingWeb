@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+import testCrawl
+
 
 class DataLoad:
     '''remove followed annotation when you want to crawl data again'''
@@ -7,21 +9,16 @@ class DataLoad:
     space = []
     '''annotated because we will treat this by saving files seperatly'''
     '''kind = []'''
-    '''cl = crawl.crawl()'''
-
-    qubic = []
     floor = []
     rooms = []
     year = []
     price = []
-    ''''[qubic, floor, price] = cl.crawlRun()'''
 
     #[space, floor, rooms, year, price] = cl.testCrawlRun()
 
     space = np.array(space)
     '''annotated because we will treat this by saving files seperatly'''
     '''kind = np.array(kind)'''
-    qubic = np.array(qubic)
     floor = np.array(floor)
     rooms = np.array(rooms)
     year = np.array(year)
@@ -31,20 +28,16 @@ class DataLoad:
 
     space = space.reshape(n, 1)
     '''annotated because we will treat this by saving files seperatly'''
-    '''''''kind = kind.reshape(n, 1)'''
+    '''''''#kind = kind.reshape(n, 1)'''
     floor = floor.reshape(n, 1)
     rooms = rooms.reshape(n, 1)
     year = year.reshape(n, 1)
     price = price.reshape(n, 1)
 
-    qubic = qubic.reshape(qubic.size, 1)
-    floor = floor.reshape(floor.size, 1)
-    price = price.reshape(price.size, 1)
 
     def Dataget(self):
         return [self.space, self.floor,
                 self.rooms, self.year, self.price]
-        return [self.qubic, self.floor, self.price]
 
     def ConvertToCSV(self):
         self.price = np.concatenate((self.space, self.price), axis=1)
@@ -53,12 +46,10 @@ class DataLoad:
         self.price = np.concatenate((self.floor, self.price), axis=1)
         self.price = np.concatenate((self.rooms, self.price), axis=1)
         self.price = np.concatenate((self.year, self.price), axis=1)
-        self.price = np.concatenate((self.qubic, self.price), axis=1)
         DataCSV = self.price
         '''annotated because there was conflicting encoding problems'''
         '''np.savetxt("DataNew.txt", DataCSV.encode('utf8'), delimiter=",", fmt="%s")'''
         pd.DataFrame(DataCSV).to_csv("DataNew.csv", index=False, header=False)
-        np.savetxt("Data.txt", DataCSV, delimiter=",",fmt="%s")
 
 
     '''annotated becaouse there were enough testing'''
@@ -80,4 +71,5 @@ class DataLoad:
     # 연식 결과 출력
     print("year : ", year)
     print("year(len) : ", len(year))'''
+
 
