@@ -34,6 +34,7 @@ for i in elem:
     link.append(result[21:-2])
 
 # beautifulsoup으로 상세 정보 크롤링
+price = [] #가격
 space = [] #공급 면적
 kind = [] #매물 종류
 floor = [] #층수
@@ -81,20 +82,42 @@ for i in link:
     trs = soup.select('.DivDetail .DetailTable > table > tbody > tr')[7]
     year.append(trs.select('td > .Inner')[0].text[:-3])
 
-    # 공급면적
-    num = len(soup.select('.AreaZone > .RateInfo'))
-    for i in range(0, num):
-        items = soup.select('.AreaZone > .RateInfo > span')
-        result = ''
-        for item in items:
-            if(item.text != '/'):
-                result += item.text
-            else:
-                break
-        space.append(result)
+    #공급면적
+    items = soup.select('.AreaZone > .RateInfo > span')
+    result = ''
+    for item in items:
+        if(item.text != '/'):
+            result += item.text
+        else:
+            break
+    space.append(result)
 
-print(space) #공급면적 결과 출력
-print(kind) #매물종류 결과 출력
-print(floor) #층수 결과 출력
-print(rooms) #방수 결과 출력
-print(year) #연식 결과 출력
+    #가격
+    items = soup.select('.PriceZone > .RateInfo > span')
+    result = ''
+    for item in items:
+        if(item.text != '/'):
+            result += item.text
+        else:
+            break
+    price.append(result)
+
+#가격 결과 출력
+print("price : ", price)
+print("price(len) : ", len(price))
+
+#공급면적 결과 출력
+print("space : ", space)
+print("space(len) : ", len(space))
+#매물종류 결과 출력
+print("kind : ", kind)
+print("kind(len) : ", len(kind))
+#층수 결과 출력
+print("floor : ", floor)
+print("floor(len) : ", len(floor))
+#방수 결과 출력
+print("rooms : ", rooms)
+print("rooms(len) : ", len(rooms))
+#연식 결과 출력
+print("year : ", year)
+print("year(len) : ", len(year))
