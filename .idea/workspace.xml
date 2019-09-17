@@ -11,6 +11,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="swProject" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -115,6 +118,9 @@
       <find>data</find>
       <find>installed</find>
       <find>template</find>
+      <find>addbias</find>
+      <find>sigma</find>
+      <find>mu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,9 +134,13 @@
         <option value="$PROJECT_DIR$/coster/web/templates/hub.html" />
         <option value="$PROJECT_DIR$/coster/web/models.py" />
         <option value="$PROJECT_DIR$/coster/coster/settings.py" />
+        <option value="$PROJECT_DIR$/coster/web/Data.txt" />
+        <option value="$PROJECT_DIR$/coster/MachineLearningMF/mlTest.py" />
+        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
         <option value="$PROJECT_DIR$/coster/web/forms.py" />
+        <option value="$PROJECT_DIR$/coster/web/templates/signup.html" />
+        <option value="$PROJECT_DIR$/coster/web/templates/mapAPI.html" />
         <option value="$PROJECT_DIR$/coster/web/urls.py" />
-        <option value="$PROJECT_DIR$/coster/web/templates/index.html" />
         <option value="$PROJECT_DIR$/coster/web/views.py" />
         <option value="$PROJECT_DIR$/coster/MachineLearningMF/Converter.py" />
         <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
@@ -184,6 +194,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/coster/web/templates" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\coding\swProject\coster\etc" />
+      <recent name="C:\coding\swProject\coster\web\static" />
+      <recent name="C:\coding\swProject\coster\web\templates" />
+      <recent name="C:\coding\swProject\coster\web" />
+      <recent name="C:\coding\swProject\coster\web\templates\resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\coding\swProject\coster\web\templates" />
       <recent name="C:\coding\swProject\coster\web" />
@@ -200,6 +217,78 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Python.run">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="swProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coster/MachineLearningMF" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="swProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coster/web" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coster/web/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="swProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/coster/MachineLearningMF" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/coster/MachineLearningMF/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run (1)" />
+        <item itemvalue="Python.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -220,10 +309,10 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13337801" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5009141" side_tool="true" weight="0.21320495" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.33142856" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32857144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -258,37 +347,39 @@
     <entry file="file://$PROJECT_DIR$/coster/web/templates/consultantProcessing.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/coster/settings.py">
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/run.py" />
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/DataInit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="62" column="61" lean-forward="true" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/templates/consultant.html">
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/mlTest.py" />
+    <entry file="file://$PROJECT_DIR$/coster/web/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        <state relative-caret-position="133">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/coster/web/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-start-column="2" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="171">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/urls.py">
+    <entry file="file://$PROJECT_DIR$/coster/web/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -304,11 +395,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coster/web/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="532">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/coster/web/templates/mapAPI.html" />
+    <entry file="file://$PROJECT_DIR$/coster/web/templates/consultantProcessing.html" />
+    <entry file="file://$PROJECT_DIR$/coster/web/templates/consultantResult.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/web/templates/consultant.html___jb_old___" />
     <entry file="file://$PROJECT_DIR$/coster/web/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -334,7 +431,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/DataInit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="228">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>

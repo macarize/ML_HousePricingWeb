@@ -5,11 +5,12 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "coster.settings")
 '''import django
 django.setup()'''
 # from .app.models import crawl
+
 class crawl:
     #평수
     def space(self):WE
         data = []
-        for page in range(1, 10:
+        for page in range(1, 10):
             print('page%d' % page)
             link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
             req = requests.get(link)
@@ -29,8 +30,7 @@ class crawl:
     #층수
     def floor(self):
         data = []
-        for page in range(1, 2):
-            print('page%d' % page)
+        for page in range(1, 10):
             link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
             req = requests.get(link)
             html = req.text
@@ -60,15 +60,24 @@ class crawl:
                     data.append(random.randrange(11,21))
                 elif result == '고':
                     data.append(random.randrange(21,31))
+
                 else:
-                    data.append(result)
-    return data
+                    result = text[0:-2]
+                    if result == '저':
+                        data.append(random.randrange(1,11))
+                    elif result == '중':
+                        data.append(random.randrange(11,21))
+                    elif result == '고':
+                        data.append(random.randrange(21,31))
+                    else:
+                        data.append(result)
+        return data
 
 
     #가격
     def price(self):
         data = []
-        for page in range(1, 2):
+        for page in range(1, 10):
             print('page%d' % page)
             link = "https://land.naver.com/article/articleList.nhn?rletTypeCd=A01&tradeTypeCd=A1&hscpTypeCd=A01%3AA03%3AA04&cortarNo=1135010300&articleOrderCode=&siteOrderCode=&cpId=&mapX=&mapY=&mapLevel=&minPrc=&maxPrc=&minWrrnt=&maxWrrnt=&minLease=&maxLease=&minSpc=&maxSpc=&subDist=&mviDate=&hsehCnt=&rltrId=&mnex=&mHscpNo=&mPtpRange=&mnexOrder=&location=2400&ptpNo=&bssYm=&schlCd=&cmplYn=&page={0}#_content_list_target".format(page)
             req = requests.get(link)
@@ -86,10 +95,12 @@ class crawl:
 
         return data
 
-
     def crawlRun(self):
         qubic = self.space()
         floor = self.floor()
         price = self.price()
+
+        print('Crawling Success')
+
         return [qubic, floor, price]
 

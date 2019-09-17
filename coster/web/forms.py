@@ -2,10 +2,10 @@ from django import forms
 from .models import *
 
 class consultantForm(forms.Form):
-    space = forms.IntegerField()
+    space = forms.FloatField()
     floor = forms.IntegerField()
-    price = forms.CharField()
 
-# class loginForm(forms.Form):
-#     id = forms.CharField()
-#     pw = forms.CharField()
+class signupForm(forms.Form):
+    id = forms.CharField()
+    pw = forms.CharField()
+    name = forms.CharField()

@@ -26,15 +26,14 @@
         <h1>COSTER</h1>
     </div>
     <div class="section">
-        <button class="prediction">QUOTIENT PREDICTION</button>
-        <br>
         <button class="consultant">CONSULTANT</button>
         <br>
         {{ request.session.login }}
         {% if request.session.login != null %}
         <button type="button" class="logout">LOGOUT</button>
         {% else %}
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">LOGIN</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign In</button>
+        <button type="button" class="btn btn-primary signup">Sign Up</button>
         {% endif %}
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,11 +66,11 @@
 </html>
 
 <script>
-    $('.prediction').click(function(){
-        location.href = '/web/prediction'
-    })
     $('.consultant').click(function(){
         location.href = '/web/consultant'
+    })
+    $('.signup').click(function(){
+        location.href = '/web/signup'
     })
     $('.logout').click(function(){
         location.href = '/web/logout'
