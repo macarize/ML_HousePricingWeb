@@ -1,12 +1,6 @@
 import numpy as np
-<<<<<<< Updated upstream
-sys.path.insert(0, '..\MachineLearningMF\crawl.py')
-import crawl
-import re
-=======
 import pandas as pd
 import testCrawl
->>>>>>> Stashed changes
 
 
 class DataLoad:
