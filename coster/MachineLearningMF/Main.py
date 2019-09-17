@@ -6,8 +6,8 @@ import numpy as np
 def ml(year,rooms,floor,space):
     BASE = os.path.dirname(os.path.abspath(__file__))
 
-    print(os.path.join(BASE, "DataNew.csv"))
-    Path = os.path.join(BASE, "DataNew.csv")
+    print(os.path.join(BASE, "DataNew.txt"))
+    Path = os.path.join(BASE, "DataNew.txt")
     # Path = "..\MachineLearningMF\Data.txt"
 
     '''somethin somthin'''
@@ -46,4 +46,3 @@ ml(2001,3,1,77.68)
 
 #cl = Converter.DataLoad()
 #cl.ConvertToCSV()
-
