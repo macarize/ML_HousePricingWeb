@@ -96,16 +96,14 @@ for i in link:
     items = soup.select('.PriceZone > .RateInfo > span')
     result = ''
     for item in items:
-        if(item.text != '/'):
+        if item.text != ',' and item.text !='만원':
             result += item.text
-        else:
-            break
+
     price.append(result)
 
 #가격 결과 출력
 print("price : ", price)
 print("price(len) : ", len(price))
-
 #공급면적 결과 출력
 print("space : ", space)
 print("space(len) : ", len(space))
