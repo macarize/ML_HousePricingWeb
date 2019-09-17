@@ -5,10 +5,11 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "coster.settings")
 '''import django
 django.setup()'''
 # from .app.models import crawl
+import random
 
 class crawl:
     #평수
-    def space(self):WE
+    def space(self):
         data = []
         for page in range(1, 10):
             print('page%d' % page)
@@ -25,7 +26,7 @@ class crawl:
                 result.replace(" ","")
                 data.append(result)
 
-        return data
+            return data
 
     #층수
     def floor(self):

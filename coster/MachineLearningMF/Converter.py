@@ -5,10 +5,11 @@ import testCrawl
 
 
 class DataLoad:
+
     '''remove followed annotation when you want to crawl data again'''
     '''cl = testCrawl.testCrawl()'''
     space = []
-    '''annotated because we will treat this by saving files seperatly'''
+    '''annotated because we will treat this by saving files seperately'''
     '''kind = []'''
     floor = []
     rooms = []
@@ -18,7 +19,7 @@ class DataLoad:
     #[space, floor, rooms, year, price] = cl.testCrawlRun()
 
     space = np.array(space)
-    '''annotated because we will treat this by saving files seperatly'''
+    '''annotated because we will treat this by saving files seperately'''
     '''kind = np.array(kind)'''
     floor = np.array(floor)
     rooms = np.array(rooms)
@@ -28,7 +29,7 @@ class DataLoad:
     n = price.size
 
     space = space.reshape(n, 1)
-    '''annotated because we will treat this by saving files seperatly'''
+    '''annotated because we will treat this by saving files seperately'''
     '''''''#kind = kind.reshape(n, 1)'''
     floor = floor.reshape(n, 1)
     rooms = rooms.reshape(n, 1)
@@ -42,7 +43,7 @@ class DataLoad:
 
     def ConvertToCSV(self):
         self.price = np.concatenate((self.space, self.price), axis=1)
-        '''annotated because we will treat this by saving files seperatly'''
+        '''annotated because we will treat this by saving files seperately'''
         '''elf.price = np.concatenate((self.kind, self.price), axis=1)'''
         self.price = np.concatenate((self.floor, self.price), axis=1)
         self.price = np.concatenate((self.rooms, self.price), axis=1)

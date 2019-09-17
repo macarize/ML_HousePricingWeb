@@ -28,7 +28,7 @@ def ml(year,rooms,floor,space):
     '''Add Bias Column'''
     data = AddBias1.addB(data)
     '''remove annotations when you compute theta again'''
-    '''run Gradient descent and Cost funtion'''
+    '''run Gradient descent and Cost function'''
     '''theta = GDescent.runGradient(data,theta,0.001,100000)
     theta = theta.reshape(1, 5)'''
 
@@ -42,7 +42,7 @@ def ml(year,rooms,floor,space):
     print('\nPredicted price of a 1650 sq-ft, 3 br house (using gradient descent): ', price[0][0])
     return price[0][0]
 
-ml(2001,3,1,77.68)
+ml(2001,3,12,77.68)
 
 
 #cl = Converter.DataLoad()
