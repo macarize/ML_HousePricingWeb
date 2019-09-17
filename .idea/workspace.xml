@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04e238fc-9e2e-47d9-b328-b03464f7837a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/coster/testCrawl.py" beforeDir="false" afterPath="$PROJECT_DIR$/coster/testCrawl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/MachineLearningMF/DataNew.txt" beforeDir="false" afterPath="$PROJECT_DIR$/coster/MachineLearningMF/DataNew.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/crawl.py" beforeDir="false" afterPath="$PROJECT_DIR$/coster/crawl.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,25 +16,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/debug.log">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/ex1data1.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/GradientDescent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+            <state>
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Loadcvs.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9">
+              <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#102#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Converter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-26">
+              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Data.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coster/crawl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="153">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/DataNew.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/DataInit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,13 +132,6 @@
         <option value="$PROJECT_DIR$/coster/coster/urls.py" />
         <option value="$PROJECT_DIR$/coster/web/template/test.html" />
         <option value="$PROJECT_DIR$/coster/web/templates/hub.html" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Converter.py" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/mainTest.py" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/test.py" />
-        <option value="$PROJECT_DIR$/coster/web/templates/consultantProcessing.html" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/DataInit.py" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/GradientDescent.py" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/run.py" />
         <option value="$PROJECT_DIR$/coster/web/models.py" />
         <option value="$PROJECT_DIR$/coster/coster/settings.py" />
         <option value="$PROJECT_DIR$/coster/web/Data.txt" />
@@ -85,16 +142,17 @@
         <option value="$PROJECT_DIR$/coster/web/templates/mapAPI.html" />
         <option value="$PROJECT_DIR$/coster/web/urls.py" />
         <option value="$PROJECT_DIR$/coster/web/views.py" />
-        <option value="$PROJECT_DIR$/coster/web/templates/consultant.html" />
-        <option value="$PROJECT_DIR$/coster/web/templates/index.html" />
+        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Converter.py" />
+        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
         <option value="$PROJECT_DIR$/coster/crawl.py" />
-        <option value="$PROJECT_DIR$/coster/testCrawl.py" />
+        <option value="$PROJECT_DIR$/coster/MachineLearningMF/DataNew.txt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="width" value="955" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="315" />
+    <option name="y" value="52" />
+    <option name="width" value="965" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -105,28 +163,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
+              <item name="ML_HousePricingWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ML_HousePricingWeb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
+              <item name="ML_HousePricingWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ML_HousePricingWeb" type="462c0819:PsiDirectoryNode" />
               <item name="coster" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
-              <item name="coster" type="462c0819:PsiDirectoryNode" />
-              <item name="etc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
+              <item name="ML_HousePricingWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ML_HousePricingWeb" type="462c0819:PsiDirectoryNode" />
               <item name="coster" type="462c0819:PsiDirectoryNode" />
               <item name="MachineLearningMF" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -134,6 +185,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,10 +304,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="764" height="832" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49908593" visible="true" weight="0.21291208" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13337801" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5009141" side_tool="true" weight="0.21320495" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -265,10 +317,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3295129" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21714285" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21199442" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3295129" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -292,36 +344,7 @@
     <entry file="file://$PROJECT_DIR$/coster/web/templates/js/includeHTML.js" />
     <entry file="file://$PROJECT_DIR$/coster/web/templates/main.html" />
     <entry file="file://$PROJECT_DIR$/coster/web/templates/hub.html" />
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/debug.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/ex1data1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/ex1data2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/runMachine.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/AddBias.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/mainTest.py" />
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/test.py" />
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/GradientDescent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/run.py" />
-    <entry file="file://$PROJECT_DIR$/coster/web/Data.txt" />
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Normalization.py">
+    <entry file="file://$PROJECT_DIR$/coster/web/templates/consultantProcessing.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/run.py" />
@@ -360,11 +383,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/static/seoul.geojson" />
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Loadcvs.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/coster/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/coster/settings.py">
+    <entry file="file://$PROJECT_DIR$/coster/web/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
@@ -379,37 +408,20 @@
     <entry file="file://$PROJECT_DIR$/coster/web/templates/consultant.html___jb_old___" />
     <entry file="file://$PROJECT_DIR$/coster/web/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+        <state relative-caret-position="595">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/templates/consultant.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/debug.log">
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/AddBias.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/views.py">
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Converter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="-26">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -417,43 +429,80 @@
     <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Data.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Converter.py">
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/DataInit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/DataNew.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/ex1data1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/debug.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/GradientDescent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Loadcvs.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state relative-caret-position="-9">
+          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
           <folding>
             <element signature="e#0#102#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Normalization.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/runMachine.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+        <state relative-caret-position="-1462">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/ex1data2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/coster/crawl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/DataNew.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="31" />
         </state>
       </provider>
     </entry>
