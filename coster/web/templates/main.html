@@ -28,13 +28,9 @@
     <div class="section">
         <button class="consultant">CONSULTANT</button>
         <br>
-        {{ request.session.login }}
-        {% if request.session.login != null %}
         <button type="button" class="logout">LOGOUT</button>
-        {% else %}
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign In</button>
+        <button type="button" class="btn btn-primary signin" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign In</button>
         <button type="button" class="btn btn-primary signup">Sign Up</button>
-        {% endif %}
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -44,18 +40,20 @@
             <h4 class="modal-title" id="exampleModalLabel">LOGIN</h4>
           </div>
           <div class="modal-body">
-            <form action="login" method="POST" class="form-inline">
+            <form action="ajaxLogin" method="POST" class="form-inline ajaxform">
             {% csrf_token %}
               <div class="form-group">
                 <label for="recipient-name" class="col-sm-2 control-label">ID</label>
-                <input type="text" class="form-control" id="recipient-name" name="id">
+                <input type="text" class="form-control id" id="recipient-name" name="id">
               </div>
               <div class="clear"></div>
               <div class="form-group">
                 <label for="message-text" class="col-sm-2 control-label">PW</label>
-                  <input type="password" class="form-control" id="message-text" name="pw">
+                  <input type="password" class="form-control pw" id="message-text" name="pw">
               </div>
-                <button type="submit" class="btn btn-primary">LOGIN</button>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" id="ajaxlogin" data-dismiss="modal">LOGIN</button>
+                </div>
             </form>
           </div>
         </div>
@@ -66,13 +64,56 @@
 </html>
 
 <script>
+    $(document).ready(function(){
+      var asd = '{{ request.session.login }}';
+      if(asd != ''){
+        $('.signin').css("display", "none")
+        $('.signup').css("display", "none")
+        $('.logout').css("display", "block");
+      }else{
+        $('.signin').css("display", "block");
+        $('.signup').css("display", "block");
+        $('.logout').css("display", "none")
+      }
+    })
+
+    //login ajax Test
+    $('#ajaxlogin').click(function(){
+      var id = $('.id').val()
+      var pw = $('.pw').val()
+      console.log('submit')
+      $.ajax({
+        type:'POST',
+        url:'ajaxLogin',
+        data:{
+          'id':id,
+          'pw':pw
+        },
+        dataType:'json',
+        success:function(result){
+          console.log(result)
+          $('.signin').css("display", "none")
+          $('.signup').css("display", "none")
+          $('.logout').css("display", "block");
+        }
+      })
+    })
+    $('.logout').click(function(){
+        $.ajax({
+          type:'POST',
+          url:'logout',
+          success:function(result){
+            $('.signin').css("display", "block");
+            $('.signup').css("display", "block");
+            $('.logout').css("display", "none")
+          }
+        })
+    })
     $('.consultant').click(function(){
         location.href = '/web/consultant'
     })
     $('.signup').click(function(){
         location.href = '/web/signup'
     })
-    $('.logout').click(function(){
-        location.href = '/web/logout'
-    })
+
 </script>
