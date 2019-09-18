@@ -1,0 +1,12 @@
+diff a/.idea/workspace.xml b/.idea/workspace.xml	(rejected hunks)
+@@ -18,8 +18,8 @@
+       <file pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="66">
+-              <caret line="106" column="17" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="17" />
++            <state relative-caret-position="266">
++              <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+               <folding>
+                 <element signature="e#0#9#0" expanded="true" />
+               </folding>
