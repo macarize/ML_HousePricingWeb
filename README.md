@@ -4,6 +4,7 @@ Process training data compromised with various features that crwaled from web an
 <br>
 <b>Used modules</b>
 <br>-numpy
+<br>-selenium
 <br>-beautifulsoup
 <br>-requests
 <br>-Django
