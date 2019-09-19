@@ -22,14 +22,14 @@ def ml(year,rooms,floor,space):
     data.loader(Path)
     '''theta init'''
     '''initiated optimal theta 17/9/2019'''
-    theta = np.array([[43000.01475504], [2504.21369816], [5321.04358409], [-613.123852], [4505.00713087]])
+    theta = np.array([[39656.8149943], [2839.62957553], [4611.727268], [998.44858994], [7378.01918862]])
     '''Normalize'''
     data.x, mu, sigma = Norm.featureNormalize(data)
     '''Add Bias Column'''
     data = AddBias1.addB(data)
     '''remove annotations when you compute theta again'''
     '''run Gradient descent and Cost function'''
-    '''theta = GDescent.runGradient(data,theta,0.001,100000)
+    '''theta = GDescent.runGradient(data,theta,0.0001,100000)
     theta = theta.reshape(1, 5)'''
 
     '''compute housing price'''
@@ -40,11 +40,11 @@ def ml(year,rooms,floor,space):
     r = r2
     price = np.dot(r.reshape(1,5), theta.reshape(5,1))
     print('\nPredicted price of a 1650 sq-ft, 3 br house (using gradient descent): ', price[0][0])
+    print(theta)
     return price[0][0]
 
-ml(2001,3,12,77.68)
 
-
+ml(2002,4,12,165.47)
 #cl = Converter.DataLoad()
 #cl.ConvertToCSV()
 
