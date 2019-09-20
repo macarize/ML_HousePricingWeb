@@ -34,6 +34,11 @@ def ml(year,rooms,floor,space):
 
     '''compute housing price'''
     r = np.array([year,rooms,floor,space])
+
+    r = r.astype(float)
+    mu = mu.astype(float)
+    sigma = sigma.astype(float)
+
     r = (r - mu)/sigma
     r2 = np.ones(r.shape[0]+1)
     r2[1:] = r

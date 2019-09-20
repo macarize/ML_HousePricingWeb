@@ -29,10 +29,12 @@
         <button class="consultant">CONSULTANT</button>
         <br>
         <button type="button" class="logout">LOGOUT</button>
-        <button type="button" class="btn btn-primary signin" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Sign In</button>
-        <button type="button" class="btn btn-primary signup">Sign Up</button>
+        <button type="button" class="btn btn-primary signin" data-toggle="modal" data-target="#loginModal" data-whatever="@mdo">Sign In</button>
+        <button type="button" class="btn btn-primary signup" data-toggle="modal" data-target="#signupModal" data-whatever="@mdo">Sign Up</button>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <!-- 로그인 모달 -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -40,7 +42,7 @@
             <h4 class="modal-title" id="exampleModalLabel">LOGIN</h4>
           </div>
           <div class="modal-body">
-            <form action="ajaxLogin" method="POST" class="form-inline ajaxform">
+            <form method="POST" class="form-inline">
             {% csrf_token %}
               <div class="form-group">
                 <label for="recipient-name" class="col-sm-2 control-label">ID</label>
@@ -52,10 +54,33 @@
                   <input type="password" class="form-control pw" id="message-text" name="pw">
               </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" id="ajaxlogin" data-dismiss="modal">LOGIN</button>
+                  <button type="button" class="btn btn-default" id="ajaxlogin">LOGIN</button>
                 </div>
             </form>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 회원가입 모달 -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <form method="POST">
+            <div class="modal-body">
+              <input type="text" id="id">
+              <input type="text" id="pw">
+              <input type="text" id="name">
+              <input type="text" id="phone">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" id="ajaxSignup">SIGNUP</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -67,37 +92,70 @@
     $(document).ready(function(){
       var asd = '{{ request.session.login }}';
       if(asd != ''){
-        $('.signin').css("display", "none")
-        $('.signup').css("display", "none")
+        $('.signin').css("display", "none");
+        $('.signup').css("display", "none");
         $('.logout').css("display", "block");
       }else{
         $('.signin').css("display", "block");
         $('.signup').css("display", "block");
-        $('.logout').css("display", "none")
+        $('.logout').css("display", "none");
       }
     })
 
-    //login ajax Test
+    //login ajax
     $('#ajaxlogin').click(function(){
       var id = $('.id').val()
       var pw = $('.pw').val()
-      console.log('submit')
+
       $.ajax({
         type:'POST',
-        url:'ajaxLogin',
+        url:'login',
         data:{
           'id':id,
           'pw':pw
         },
         dataType:'json',
         success:function(result){
-          console.log(result)
-          $('.signin').css("display", "none")
-          $('.signup').css("display", "none")
-          $('.logout').css("display", "block");
+          console.log(result.login)
+          if(result.login != null){
+            $('#loginModal').modal('hide');
+            $('.signin').css("display", "none");
+            $('.signup').css("display", "none");
+            $('.logout').css("display", "block");
+          }else{
+            alert('Login Fail')
+          }
         }
       })
     })
+    //signup ajax
+    $('#ajaxSignup').click(function(){
+      var id = $('#id').val()
+      var pw = $('#pw').val()
+      var name = $('#name').val()
+      var phone = $('#phone').val()
+
+      $.ajax({
+        type:'POST',
+        url:'signup',
+        data:{
+          'id':id,
+          'pw':pw,
+          'name':name,
+          'phone':phone
+        },
+        dataType:'json',
+        success:function(result){
+          console.log(result.login)
+          if(result.signup == 'success'){
+            $('#signupModal').modal('hide');
+          }else{
+            alert('Signup Fail')
+          }
+        }
+      })
+    })
+    //logout ajax
     $('.logout').click(function(){
         $.ajax({
           type:'POST',
@@ -111,9 +169,6 @@
     })
     $('.consultant').click(function(){
         location.href = '/web/consultant'
-    })
-    $('.signup').click(function(){
-        location.href = '/web/signup'
     })
 
 </script>

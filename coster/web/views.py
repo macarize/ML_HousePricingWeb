@@ -7,27 +7,31 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
+    form = signupForm()
     login = request.session.get('login')
 
-    return render(request, 'main.html', {login: login})
+    return render(request, 'main.html', {'form': form})
 
+@csrf_exempt
 def signup(request):
     if request.method == 'POST':
         #get user info
         id = request.POST.get('id')
         pw = request.POST.get('pw')
         name = request.POST.get('name')
+        phone = request.POST.get('phone')
 
-        info = user(id = id, pw = pw, name = name)
+        info = user(id = id, pw = pw, name = name, phone = phone, power = 1)
         info.save() #insert user info
 
-        return redirect(main)
-    else:
-        form = signupForm()
-        return render(request, 'signup.html', {'form': form})
+        context = {
+            'signup':'success'
+        }
+
+        return HttpResponse(json.dumps(context), content_type="application/json")
 
 @csrf_exempt
-def ajaxLogin(request):
+def login(request):
     if request.method == 'POST':
         #get id and pw entered
         id = request.POST.get('id')
@@ -42,9 +46,11 @@ def ajaxLogin(request):
                 context = {
                     'login': request.session.get('login')
                 }
+            else:
+                context = {
+                    'login': None
+                }
         return HttpResponse(json.dumps(context), content_type="application/json")
-    else:
-        return print('login fail')
 
 @csrf_exempt
 def logout(request):
@@ -59,9 +65,11 @@ def consultant(request):
         #get customer's house info
         space = request.POST.get('space')
         floor = request.POST.get('floor')
-        dic = {'space': space, 'floor': floor}
+        rooms = request.POST.get('rooms')
+        year = request.POST.get('year')
+        dic = {'year':year, 'rooms':rooms, 'floor': floor, 'space': space}
         print(dic)
-        result = Main.ml(space, floor) #enter into ML model
+        result = Main.ml(year, rooms, floor, space) #enter into ML model
         return render(request, 'consultantResult.html', {'result': result})
     else:
         form = consultantForm()
