@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 def main(request):
     form = signupForm()
-    login = request.session.get('login')
 
     return render(request, 'main.html', {'form': form})
 
@@ -74,3 +73,6 @@ def consultant(request):
     else:
         form = consultantForm()
         return render(request, 'consultant.html', {'form': form, 'login': request.session.get('login', 'no')})
+
+def find(request):
+    return render(request, 'find.html')

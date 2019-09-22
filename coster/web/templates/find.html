@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--jquery 3.4.1 -->
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<!-- bootstrap 3.3.2 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+  <input type="text" id="zipAddr">
+  <button type="button" onclick="fn_setAddr()">주소찾기</button>
+  <br>
+  <input type="text" id="addr">
+</body>
+</html>
+
+<script>
+  function fn_setAddr(){
+    var width = 500;
+    var height = 600;
+    daum.postcode.load(function(){
+      new daum.Postcode({
+        oncomplete: function(data){
+          $('#zipAddr').val(data.address);
+          $('#addr').val(data.buildngName);
+        }
+      }).open({
+        left:(window.screen.width / 2) - (width / 2),
+        top:(window.screen.height / 2) - (height / 2)
+      })
+    })
+  }
+</script>
