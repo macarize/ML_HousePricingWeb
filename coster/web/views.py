@@ -76,3 +76,12 @@ def consultant(request):
 
 def find(request):
     return render(request, 'find.html')
+
+def Hub(request):
+    return render(request, 'html/Hub.html')
+
+def Intro(request):
+    return render(request, 'html/Intro.html')
+
+def Page2(request):
+    return render(request, 'html/Page2.html')
