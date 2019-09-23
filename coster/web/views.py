@@ -59,7 +59,7 @@ def logout(request):
     }
     return HttpResponse(json.dumps(context), content_type="application/json")
 
-def consultant(request):
+def consultantTest(request):
     if request.method == 'POST':
         #get customer's house info
         space = request.POST.get('space')
@@ -69,10 +69,10 @@ def consultant(request):
         dic = {'year':year, 'rooms':rooms, 'floor': floor, 'space': space}
         print(dic)
         result = Main.ml(year, rooms, floor, space) #enter into ML model
-        return render(request, 'consultantResult.html', {'result': result})
+        return render(request, 'consultantTestResult.html', {'result': result})
     else:
         form = consultantForm()
-        return render(request, 'consultant.html', {'form': form, 'login': request.session.get('login', 'no')})
+        return render(request, 'consultantTest.html', {'form': form, 'login': request.session.get('login', 'no')})
 
 def find(request):
     return render(request, 'find.html')
@@ -83,5 +83,5 @@ def Hub(request):
 def Intro(request):
     return render(request, 'html/Intro.html')
 
-def Page2(request):
-    return render(request, 'html/Page2.html')
+def consultant(request):
+    return render(request, 'html/consultant.html')
