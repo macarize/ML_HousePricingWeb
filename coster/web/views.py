@@ -36,7 +36,6 @@ def login(request):
         id = request.POST.get('id')
         pw = request.POST.get('pw')
         print(id)
-
         #select and compare user info
         for u in user.objects.all():
             if(u.id == id and u.pw == pw):
@@ -59,6 +58,19 @@ def logout(request):
     }
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+def find(request):
+    return render(request, 'find.html')
+
+def Hub(request):
+    return render(request, 'html/Hub.html')
+
+def Intro(request):
+    return render(request, 'html/Intro.html')
+
+def consultant(request):
+    return render(request, 'html/consultant.html')
+
+# 테스트 기능들
 def consultantTest(request):
     if request.method == 'POST':
         #get customer's house info
@@ -74,14 +86,28 @@ def consultantTest(request):
         form = consultantForm()
         return render(request, 'consultantTest.html', {'form': form, 'login': request.session.get('login', 'no')})
 
-def find(request):
-    return render(request, 'find.html')
+@csrf_exempt
+def si(request):
+    data = request.POST.get('si')
+    print(data)
+    result = []
+    for item in consulting.objects.filter(si = data):
+        print(item.gu)
+        result.append(item.gu)
 
-def Hub(request):
-    return render(request, 'html/Hub.html')
+    result = list(set(result)) #중복 제거
+    result = json.dumps({'gu' : result}) #json 으로 변환
+    return HttpResponse(result, content_type ="application/json")
 
-def Intro(request):
-    return render(request, 'html/Intro.html')
+@csrf_exempt
+def gu(request):
+    data = request.POST.get('gu')
+    print(data)
+    result = []
+    for item in consulting.objects.filter(gu = data):
+        print(item.dong)
+        result.append(item.dong)
 
-def consultant(request):
-    return render(request, 'html/consultant.html')
+    result = list(set(result)) #중복 제거
+    result = json.dumps({'dong' : result}) #json 으로 변환
+    return HttpResponse(result, content_type ="application/json")

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04e238fc-9e2e-47d9-b328-b03464f7837a" name="Default Changelist" comment="" />
+    <list default="true" id="04e238fc-9e2e-47d9-b328-b03464f7837a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/templates/consultantTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/templates/consultantTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/coster/web/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+            <state relative-caret-position="342">
+              <caret line="69" selection-start-line="69" selection-end-line="70" selection-end-column="50" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -34,11 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/web/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coster/web/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="266">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -90,17 +105,19 @@
         <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
         <option value="$PROJECT_DIR$/coster/MachineLearningMF/Converter.py" />
         <option value="$PROJECT_DIR$/coster/web/templates/main.html" />
-        <option value="$PROJECT_DIR$/coster/web/models.py" />
         <option value="$PROJECT_DIR$/coster/web/migrations/__init__.py" />
         <option value="$PROJECT_DIR$/coster/web/templates/consultantResult.html" />
         <option value="$PROJECT_DIR$/coster/web/templates/find.html" />
-        <option value="$PROJECT_DIR$/coster/web/views.py" />
+        <option value="$PROJECT_DIR$/coster/web/migrations/0002_cunsultant.py" />
+        <option value="$PROJECT_DIR$/coster/web/migrations/0002_consultant.py" />
         <option value="$PROJECT_DIR$/coster/web/urls.py" />
+        <option value="$PROJECT_DIR$/coster/web/models.py" />
+        <option value="$PROJECT_DIR$/coster/web/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
+    <option name="x" value="-7" />
     <option name="width" value="965" />
     <option name="height" value="1039" />
   </component>
@@ -135,7 +152,7 @@
               <item name="swProject" type="462c0819:PsiDirectoryNode" />
               <item name="coster" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
@@ -143,7 +160,6 @@
               <item name="coster" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -269,9 +285,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="772" height="830" extended-state="0" />
+    <frame x="-7" y="0" width="965" height="1039" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49725777" visible="true" weight="0.2173913" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49725777" visible="true" weight="0.17259978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50274223" side_tool="true" weight="0.21875" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -282,7 +299,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21776505" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1679558" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -388,13 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2280">
-          <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Loadcvs.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -442,13 +452,6 @@
     <entry file="file://$PROJECT_DIR$/coster/web/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coster/coster/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -474,13 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coster/web/templates/html/consultant.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -488,29 +484,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/views.py">
+    <entry file="file://$PROJECT_DIR$/coster/web/migrations/0002_cunsultant.py" />
+    <entry file="file://$PROJECT_DIR$/coster/web/migrations/0004_consultant_id.py" />
+    <entry file="file://$PROJECT_DIR$/coster/web/migrations/0003_auto_20190923_2056.py" />
+    <entry file="file://$PROJECT_DIR$/coster/web/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="380">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/models.py">
+    <entry file="file://$PROJECT_DIR$/coster/web/migrations/0002_consultant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="418">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="104" column="40" lean-forward="true" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/coster/web/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="266">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/web/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/web/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="69" selection-start-line="69" selection-end-line="70" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
