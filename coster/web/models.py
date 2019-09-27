@@ -16,3 +16,10 @@ class consulting(models.Model):
     theta2 = models.FloatField()
     theta3 = models.FloatField()
     theta4 = models.FloatField()
+
+class middleman(models.Model):
+    no = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    dong = models.CharField(max_length=100)
