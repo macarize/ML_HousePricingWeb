@@ -2,8 +2,7 @@ from MachineLearningMF import DataInit, AddBias, GradientDescent, Normalization,
 import os.path
 import numpy as np
 
-
-def ml(year,rooms,floor,space):
+def ml(year, rooms, floor, space, theta0, theta1, theta2, theta3, theta4):
     BASE = os.path.dirname(os.path.abspath(__file__))
 
     print(os.path.join(BASE, "DataNew.csv"))
@@ -22,7 +21,8 @@ def ml(year,rooms,floor,space):
     data.loader(Path)
     '''theta init'''
     '''initiated optimal theta 17/9/2019'''
-    theta = np.array([[39656.8149943], [2839.62957553], [4611.727268], [998.44858994], [7378.01918862]])
+    # 동 별 theta값 입력 테스트
+    theta = np.array([[theta0], [theta1], [theta2], [theta3], [theta4]])
     '''Normalize'''
     data.x, mu, sigma = Norm.featureNormalize(data)
     '''Add Bias Column'''
@@ -49,7 +49,6 @@ def ml(year,rooms,floor,space):
     return price[0][0]
 
 
-ml(2002,4,12,165.47)
 #cl = Converter.DataLoad()
 #cl.ConvertToCSV()
 

@@ -78,9 +78,14 @@ def consultantTest(request):
         floor = request.POST.get('floor')
         rooms = request.POST.get('rooms')
         year = request.POST.get('year')
+        dong = request.POST.get('dong')
+        # dong theta값 꺼내오기
+        data = consulting.objects.filter(dong = dong)
+
         dic = {'year':year, 'rooms':rooms, 'floor': floor, 'space': space}
         print(dic)
-        result = Main.ml(year, rooms, floor, space) #enter into ML model
+        result = Main.ml(year, rooms, floor, space, data[0].theta0, data[0].theta1, data[0].theta2, data[0].theta3, data[0].theta4) #enter into ML model
+
         return render(request, 'consultantTestResult.html', {'result': result})
     else:
         form = consultantForm()
