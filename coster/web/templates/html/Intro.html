@@ -3,9 +3,15 @@
 <head>
 	<title>RE</title>
 	{% load staticfiles %}
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Hover.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Load.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Elements.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
 	<style type="text/css">
 		html, body {
 		margin :0;
@@ -34,6 +40,30 @@
 	    transform: scale(0.9);
 		}
 	</style>
+	<style>
+		@font-face {
+	    font-family: NanumSquare;
+	    src: url({% static "NanumSquare_acB.ttf" %});
+		}
+		@font-face {
+	    font-family: Agency;
+	    src: url({% static "AgencyFB-Bold.ttf" %});
+		}
+		.LoginHead {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+		}
+		.signIn {
+			position: absolute;
+			top: 28vh;
+			font-family: NanumSquare;
+			font-size: 2vh;
+			color : black;
+			text-align: left;
+			line-height: 1vh;
+		}
+	</style>
 </head>
 <body>
 	<div class='wrapper'>
@@ -43,7 +73,6 @@
 		<div><img class='Pic2 hvr-shrink zoomIn' src="{% static "\Resource\AI\Intro\SVG\Asset_6.png" %}"></div>
 		<div><img class='Pic3 hvr-shrink zoomIn' src="{% static "\Resource\AI\Intro\SVG\Asset_7.png" %}"></div>
 		<div><img class='Logo1' src="{% static "\Resource\AI\Intro\SVG\Asset_8.png" %}"></div>
-		<div><img class='Login1' src="{% static "\Resource\AI\Intro\SVG\Asset_9.svg" %}"></div>
 		<div><img class='Triangle hvr-buzz-out' src="{% static "\Resource\AI\Intro\SVG\Asset_10.svg" %}"></div>
 		<div><img class='Busan slide-bottom' src="{% static "\Resource\AI\Intro\SVG\Asset_11.svg" %}"></div>
 		<div><img class='Daegu slide-top' src="{% static "\Resource\AI\Intro\SVG\Asset_12.svg" %}"></div>
@@ -54,5 +83,25 @@
 		<div><img class='Daejeon slide-bottom' src="{% static "\Resource\AI\Intro\SVG\Asset_17.svg" %}"></div>
 		<div><img class='Intro_title' src="{% static "\Resource\AI\Intro\SVG\Asset_18.svg" %}"></div>
 	</div>
+	<div class="container"> <!-- Trigger the modal with a button -->
+  <a href="#myModal" role="button" data-toggle="modal">
+  <img class=Login1 src="{% static "\Resource\AI\Intro\SVG\Asset_9.svg" %}"></a>
+</div>
+</button>
+  <div class="modal modal-center fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-center">
+      <div class="modal-content">
+          <div class="modal-body">
+            <div class="GO X" data-dismiss="modal">X</div>
+            <div class="LoginHead">LOGIN</div>
+            <input class="LoginBody" type="text" name="ID" placeholder="ID">
+            <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
+            <a href='#'><div class="signIn">계정이 없으세요?</div></a>
+            <a href="#"><div class="GO">GO</div></a>             
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
