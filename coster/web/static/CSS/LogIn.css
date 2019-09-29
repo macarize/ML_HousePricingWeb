@@ -1,0 +1,78 @@
+	<style type="text/css">
+		.LoginHead {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+		}
+		.modal.modal-center {
+		  text-align: center;
+		}
+
+		@media screen and (min-width: 768px) { 
+		  .modal.modal-center:before {
+		    display: inline-block;
+		    vertical-align: middle;
+		    content: " ";
+		    height: 100%;
+		  }
+		}
+
+		.modal-dialog.modal-center {
+		  display: inline-block;
+		  text-align: left;
+		  vertical-align: middle; 
+		}
+		.LoginBody {
+			font-family: Agency;
+			font-size: 4vh;
+			color : black;
+			border-color: black;
+			border-width: 0 0 1vh 0;
+		}
+		.modal-body {
+			padding: 5vh;
+		}
+		.modal-dialog {
+			width : 43vh;
+		}
+		.GO {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+			border-color: black;
+			border-width: 1vh;
+			text-align: right;
+
+		}
+		a {
+			color: black;
+			text-decoration: none;
+		}
+		.X {
+			font-family: Agency;
+			position: absolute;
+			top: 1vh;
+			left: 38vh;
+		}
+		.signIn {
+			position: absolute;
+			top: 28vh;
+			font-family: NanumSquare;
+			font-size: 2vh;
+			color : black;
+			text-align: left;
+			line-height: 1vh;
+		}
+		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		  color: black;
+		  opacity: 1; /* Firefox */
+		}
+
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		  color: black;
+		}
+
+		::-ms-input-placeholder { /* Microsoft Edge */
+		  color: black;
+		}
+	</style>

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Hover.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Load.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Elements.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
 	<style type="text/css">
 		html, body {
 		margin :0;
@@ -39,6 +40,30 @@
 	    transform: scale(0.9);
 		}
 	</style>
+	<style>
+		@font-face {
+	    font-family: NanumSquare;
+	    src: url({% static "NanumSquare_acB.ttf" %});
+		}
+		@font-face {
+	    font-family: Agency;
+	    src: url({% static "AgencyFB-Bold.ttf" %});
+		}
+		.LoginHead {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+		}
+		.signIn {
+			position: absolute;
+			top: 28vh;
+			font-family: NanumSquare;
+			font-size: 2vh;
+			color : black;
+			text-align: left;
+			line-height: 1vh;
+		}
+	</style>
 </head>
 <body>
 	<div class='wrapper'>
@@ -63,21 +88,20 @@
   <img class=Login1 src="{% static "\Resource\AI\Intro\SVG\Asset_9.svg" %}"></a>
 </div>
 </button>
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+  <div class="modal modal-center fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-center">
       <div class="modal-content">
-        <div class="modal-header">
           <div class="modal-body">
-            <p>Some text in the modal.</p>
+            <div class="GO X" data-dismiss="modal">X</div>
+            <div class="LoginHead">LOGIN</div>
+            <input class="LoginBody" type="text" name="ID" placeholder="ID">
+            <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
+            <a href='#'><div class="signIn">계정이 없으세요?</div></a>
+            <a href="#"><div class="GO">GO</div></a>             
           </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
       </div>
     </div>
   </div>
-  
 </div>
-
 </body>
 </html>

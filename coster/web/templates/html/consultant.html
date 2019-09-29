@@ -12,6 +12,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Load.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Elements2.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
 	<style type="text/css">
 		html, body {
 		margin :0;
@@ -111,7 +112,20 @@
 		    visibility: visible;
 		  }
 		}
-			</style>
+		@font-face {
+	    font-family: Agency;
+	    src: url({% static "AgencyFB-Bold.ttf" %});
+		}
+		@font-face {
+	    font-family: Nanum;
+	    src: url({% static "NanumSquare_acB.ttf" %});
+		}
+		.LoginHead {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+		}
+	</style>
 </head>
 <body>
 	<div class='wrapper'>
@@ -159,15 +173,16 @@
     <img class="Login2" src="..\..\static\Resource\AI\Intro\SVG\Asset_9.svg"></a>
 </div>
 </button>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+    <div class="modal modal-center fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-center">
             <div class="modal-content">
-                <div class="modal-header"></div>
                 <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="GO X" data-dismiss="modal">X</div>
+                    <div class="LoginHead">LOGIN</div>
+                    <input class="LoginBody" type="text" name="ID" placeholder="ID">
+                    <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
+                    <a href='#'><div class="signIn">계정이 없으세요?</div></a>
+                    <a href="#"><div class="GO">GO</div></a>   
                 </div>
             </div>  
         </div>

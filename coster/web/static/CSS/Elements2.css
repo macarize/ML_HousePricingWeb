@@ -3,6 +3,10 @@
 	    font-family: NanumSquare;
 	    src: url({% static "NanumSquare_acB.ttf" %});
 		}
+		@font-face {
+	    font-family: Agency;
+	    src: url({% static "AgencyFB-Bold.ttf" %});
+		}
 		.wraper{ position: relative; }
 		.Logo2 {
 			position : absolute ;
@@ -115,5 +119,54 @@
 			font-size: 1.8vh;
 			background-color: transparent;
 
+		}
+		.LoginHead {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+		}
+		.modal.modal-center {
+		  text-align: center;
+		}
+
+		@media screen and (min-width: 768px) { 
+		  .modal.modal-center:before {
+		    display: inline-block;
+		    vertical-align: middle;
+		    content: " ";
+		    height: 100%;
+		  }
+		}
+
+		.modal-dialog.modal-center {
+		  display: inline-block;
+		  text-align: left;
+		  vertical-align: middle; 
+		}
+		.LoginBody {
+			font-family: Agency;
+			font-size: 4vh;
+			color : black;
+			border-color: black;
+			border-width: 0 0 1vh 0;
+		}
+		.modal-body {
+			padding: 5vh;
+		}
+		.modal-dialog {
+			width : 43vh;
+		}
+		.GO {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+			border-color: black;
+			border-width: 1vh;
+			text-align: right;
+
+		}
+		a {
+			color: black;
+			text-decoration: none;
 		}
 	</style>
