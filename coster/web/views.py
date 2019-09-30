@@ -70,6 +70,12 @@ def Intro(request):
 def consultant(request):
     return render(request, 'html/consultant.html')
 
+def Results(request):
+    return render(request, 'html/Results.html')
+
+def Seller(request):
+    return render(request, 'html/Seller.html')
+
 # 테스트 기능들
 def consultantTest(request):
     if request.method == 'POST':
