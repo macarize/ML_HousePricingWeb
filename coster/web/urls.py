@@ -13,4 +13,6 @@ urlpatterns = [
     path('consultantTest', views.consultantTest, name='consultantTest'), # 테스트
     path('si', views.si, name='si'),
     path('gu', views.gu, name='gu'),
+    path('Results', views.Results, name='Results'),
+    path('Seller', views.Seller, name='Seller'),
 ]
