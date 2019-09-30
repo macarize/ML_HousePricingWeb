@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<!--jquery 3.4.1 -->
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Load.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Elements2.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
@@ -169,30 +167,59 @@
 		</div>
 	</div>
 <div class="container">
-    <a href="#myModal" role="button" data-toggle="modal">
-    <img class="Login2" src="..\..\static\Resource\AI\Intro\SVG\Asset_9.svg"></a>
+  <a href="#loginModal" role="button" data-toggle="modal">
+    <img class="Login2" src="..\..\static\Resource\AI\Intro\SVG\Asset_9.svg">
+	</a>
 </div>
 </button>
-    <div class="modal modal-center fade" id="myModal" role="dialog">
+    <div class="modal modal-center fade" id="loginModal" role="dialog">
         <div class="modal-dialog modal-center">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="GO X" data-dismiss="modal">X</div>
                     <div class="LoginHead">LOGIN</div>
-                    <input class="LoginBody" type="text" name="ID" placeholder="ID">
-                    <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
-                    <a href='#'><div class="signIn">계정이 없으세요?</div></a>
-                    <a href="#"><div class="GO">GO</div></a>   
+										<form method="POST">
+											{% csrf_token %}
+											<input class="LoginBody" type="text" id="id" placeholder="ID">
+											<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
+											<a href='#'><div class="signIn">계정이 없으세요?</div></a>
+											<div class="GO"><button type="button" id="ajaxlogin">GO</button></div>
+										</form>
                 </div>
-            </div>  
+            </div>
         </div>
-    </div> 
+    </div>
  </div>
 </body>
 
 </html>
 
 <script>
+	//login ajax
+	$('#ajaxlogin').click(function(){
+		var id = $('#id').val()
+		var pw = $('#pw').val()
+
+		$.ajax({
+			type:'POST',
+			url:'login',
+			data:{
+				'id':id,
+				'pw':pw
+			},
+			dataType:'json',
+			success:function(result){
+				console.log(result.login)
+				if(result.login != null){
+					$('#loginModal').modal('hide');
+					$('.Login2').css("display", "none");
+					$('.Login1', parent.frames["intro"].document).css("display", "none");
+				}else{
+					alert('Login Fail')
+				}
+			}
+		})
+	})
   //Login Check
   function check(){
     if('{{login}}' != 'no'){

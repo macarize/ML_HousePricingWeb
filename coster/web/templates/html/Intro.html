@@ -83,21 +83,24 @@
 		<div><img class='Daejeon slide-bottom' src="{% static "\Resource\AI\Intro\SVG\Asset_17.svg" %}"></div>
 		<div><img class='Intro_title' src="{% static "\Resource\AI\Intro\SVG\Asset_18.svg" %}"></div>
 	</div>
-	<div class="container"> <!-- Trigger the modal with a button -->
-  <a href="#myModal" role="button" data-toggle="modal">
+<div class="container"> <!-- Trigger the modal with a button -->
+  <a href="#loginModal" role="button" data-toggle="modal">
   <img class=Login1 src="{% static "\Resource\AI\Intro\SVG\Asset_9.svg" %}"></a>
 </div>
 </button>
-  <div class="modal modal-center fade" id="myModal" role="dialog">
+  <div class="modal modal-center fade" id="loginModal" role="dialog">
     <div class="modal-dialog modal-center">
       <div class="modal-content">
           <div class="modal-body">
             <div class="GO X" data-dismiss="modal">X</div>
             <div class="LoginHead">LOGIN</div>
-            <input class="LoginBody" type="text" name="ID" placeholder="ID">
-            <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
-            <a href='#'><div class="signIn">계정이 없으세요?</div></a>
-            <a href="#"><div class="GO">GO</div></a>             
+						<form method="POST">
+							{% csrf_token %}
+							<input class="LoginBody" type="text" id="id" placeholder="ID">
+							<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
+							<a href='#'><div class="signIn">계정이 없으세요?</div></a>
+							<div class="GO"><button type="button" id="ajaxlogin">GO</button></div>
+						</form>
           </div>
       </div>
     </div>
@@ -105,3 +108,32 @@
 </div>
 </body>
 </html>
+
+
+<script>
+	//login ajax
+	$('#ajaxlogin').click(function(){
+		var id = $('#id').val()
+		var pw = $('#pw').val()
+
+		$.ajax({
+			type:'POST',
+			url:'login',
+			data:{
+				'id':id,
+				'pw':pw
+			},
+			dataType:'json',
+			success:function(result){
+				console.log(result.login)
+				if(result.login != null){
+					$('#loginModal').modal('hide');
+					$('.Login1').css("display", "none");
+					$('.Login2', parent.frames["consultant"].document).css("display", "none");
+				}else{
+					alert('Login Fail')
+				}
+			}
+		})
+	})
+</script>

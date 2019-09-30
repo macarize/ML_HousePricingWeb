@@ -70,27 +70,6 @@ def Intro(request):
 def consultant(request):
     return render(request, 'html/consultant.html')
 
-# 테스트 기능들
-def consultantTest(request):
-    if request.method == 'POST':
-        #get customer's house info
-        space = request.POST.get('space')
-        floor = request.POST.get('floor')
-        rooms = request.POST.get('rooms')
-        year = request.POST.get('year')
-        dong = request.POST.get('dong')
-        # dong theta값 꺼내오기
-        data = consulting.objects.filter(dong = dong)
-
-        dic = {'year':year, 'rooms':rooms, 'floor': floor, 'space': space}
-        print(dic)
-        result = Main.ml(year, rooms, floor, space, data[0].theta0, data[0].theta1, data[0].theta2, data[0].theta3, data[0].theta4) #enter into ML model
-
-        return render(request, 'consultantTestResult.html', {'result': result})
-    else:
-        form = consultantForm()
-        return render(request, 'consultantTest.html', {'form': form, 'login': request.session.get('login', 'no')})
-
 @csrf_exempt
 def si(request):
     data = request.POST.get('si')
@@ -116,3 +95,25 @@ def gu(request):
     result = list(set(result)) #중복 제거
     result = json.dumps({'dong' : result}) #json 으로 변환
     return HttpResponse(result, content_type ="application/json")
+
+# 테스트 기능들
+def consultantTest(request):
+    if request.method == 'POST':
+        #get customer's house info
+        space = request.POST.get('space')
+        floor = request.POST.get('floor')
+        rooms = request.POST.get('rooms')
+        year = request.POST.get('year')
+        dong = request.POST.get('dong')
+        # dong theta값 꺼내오기
+        data = consulting.objects.filter(dong = dong)
+
+        dic = {'year':year, 'rooms':rooms, 'floor': floor, 'space': space}
+        print(dic)
+        result = Main.ml(year, rooms, floor, space, data[0].theta0, data[0].theta1, data[0].theta2, data[0].theta3, data[0].theta4) #enter into ML model
+
+        return render(request, 'consultantTestResult.html', {'result': result})
+    else:
+        form = consultantForm()
+        return render(request, 'consultantTest.html', {'form': form, 'login': request.session.get('login', 'no')})
+

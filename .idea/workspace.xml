@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04e238fc-9e2e-47d9-b328-b03464f7837a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/swProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/swProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coster/web/templates/consultantTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/templates/consultantTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/templates/html/Hub.html" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/templates/html/Hub.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/templates/html/Intro.html" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/templates/html/Intro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/templates/html/LogIn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coster/web/templates/html/consultant.html" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/templates/html/consultant.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coster/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coster/web/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/coster/web/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="645">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -30,14 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/coster/MachineLearningMF/Main.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
-              <folding>
-                <element signature="e#0#102#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="380">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -45,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coster/web/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="247">
               <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -103,16 +113,16 @@
         <option value="$PROJECT_DIR$/coster/web/migrations/0002_consultant.py" />
         <option value="$PROJECT_DIR$/coster/web/urls.py" />
         <option value="$PROJECT_DIR$/coster/web/models.py" />
+        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
+        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
         <option value="$PROJECT_DIR$/coster/web/views.py" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
-        <option value="$PROJECT_DIR$/coster/MachineLearningMF/Main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="965" />
-    <option name="height" value="1159" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -139,35 +149,7 @@
               <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="swProject" type="462c0819:PsiDirectoryNode" />
               <item name="coster" type="462c0819:PsiDirectoryNode" />
-              <item name="MachineLearningMF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
-              <item name="coster" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
-              <item name="coster" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
-              <item name="coster" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swProject" type="462c0819:PsiDirectoryNode" />
-              <item name="coster" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -293,7 +275,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="965" height="1159" extended-state="0" />
+    <frame x="-7" y="0" width="965" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49725777" visible="true" weight="0.17259978" />
@@ -307,7 +289,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.17658536" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19715224" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -376,16 +358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/crawl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1174">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -469,13 +441,6 @@
     <entry file="file://$PROJECT_DIR$/coster/web/migrations/0004_consultant_id.py" />
     <entry file="file://$PROJECT_DIR$/coster/web/migrations/0003_auto_20190923_2056.py" />
     <entry file="file://$PROJECT_DIR$/coster/web/migrations/0002_consultant.py" />
-    <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="104" column="40" lean-forward="true" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coster/web/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -515,20 +480,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/coster/web/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="247">
           <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coster/web/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -539,6 +494,40 @@
           <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
           <folding>
             <element signature="e#0#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/crawl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/testCrawl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coster/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
