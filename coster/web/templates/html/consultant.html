@@ -145,16 +145,17 @@
 			</div>
 			<div class="form">
 				<form method="POST" onsubmit="return check()">
+							{% csrf_token %}
 							<select id="si">
 								<option value="선택" selected>&nbsp;선택</option>
 								<option value="서울시">&nbsp;서울시</option>
 								<option value="부산">&nbsp;부산</option>
 								<option value="대구">&nbsp;대구</option>
 	            </select>
-	            <select name="gugun2" id="gu">
+	            <select name="gu" id="gu">
 	                <option value="선택">&nbsp;선택</option>
 	            </select>
-	            <select name="dong2" id="dong">
+	            <select name="dong" id="dong">
 	                <option value="">&nbsp;선택</option>
 	            </select>
 	            <input type="text" name="kind" value="&nbsp;&nbsp;&nbsp;&nbsp;">
@@ -162,6 +163,7 @@
 	            <input type="text" name="floor" value="&nbsp;&nbsp;&nbsp;&nbsp;">
 	            <input type="text" name="rooms" value="&nbsp;&nbsp;&nbsp;&nbsp;">
 	            <input type="text" name="years" value="&nbsp;&nbsp;&nbsp;&nbsp;">
+							<button type="submit">GO</button>
 				</form>
 			</div>
 		</div>

@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<!--jquery 3.4.1 -->
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "\css\Elements3.css" %}">
 	<style type="text/css">
@@ -45,7 +44,7 @@
 	<div><img class='RBox' src="{% static "\Resource\AI\Results\SVG\Asset_3.svg" %}"></div>
 	<div><img class='RTitle' src="{% static "\Resource\AI\Results\SVG\Asset_4.svg" %}"></div>
 	<div><img class='LogoW' src="{% static "\Resource\AI\Results\SVG\Asset_6.png" %}"></div>
-	<div><input class='readonlyBox' type="text" name="resoults" readonly></div>
+	<div><input class='readonlyBox' type="text" name="resoults" value="{{result}}" readonly></div>
 	<div class='suggestion'><a href='#'>나에게 꼭 맞는 중계소 찾기</a></div>
 	<div class="container">
     <a href="#myModal" role="button" data-toggle="modal">
@@ -61,11 +60,11 @@
                     <input class="LoginBody" type="text" name="ID" placeholder="ID">
                     <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
                     <a href='#'><div class="signIn">계정이 없으세요?</div></a>
-                    <a href="#"><div class="GO">GO</div></a>   
+                    <a href="#"><div class="GO">GO</div></a>
                 </div>
-            </div>  
+            </div>
         </div>
-    </div> 
+    </div>
 	</div>
 </body>
 </html>
