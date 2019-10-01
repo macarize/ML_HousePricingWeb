@@ -10,7 +10,6 @@ urlpatterns = [
     path('Hub', views.Hub, name='Hub'),
     path('Intro', views.Intro, name='Intro'),
     path('consultant', views.consultant, name='consultant'),
-    path('consultantTest', views.consultantTest, name='consultantTest'), # 테스트
     path('si', views.si, name='si'),
     path('gu', views.gu, name='gu'),
     path('Results', views.Results, name='Results'),
