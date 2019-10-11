@@ -6,11 +6,6 @@ from MachineLearningMF import Main
 import json
 from django.views.decorators.csrf import csrf_exempt
 
-def main(request):
-    form = signupForm()
-
-    return render(request, 'main.html', {'form': form})
-
 @csrf_exempt
 def signup(request):
     if request.method == 'POST':
@@ -57,9 +52,6 @@ def logout(request):
         'login':None
     }
     return HttpResponse(json.dumps(context), content_type="application/json")
-
-def find(request):
-    return render(request, 'find.html')
 
 def Hub(request):
     return render(request, 'html/Hub.html')
