@@ -123,10 +123,24 @@
 			font-size: 5vh;
 			color : black;
 		}
+		.submit {
+			float:right;
+			color:white;
+			width: 13vh;
+			margin-right: 4vh;
+			line-height: 4vh;
+			border-radius: 50px;
+			border-style: hidden;
+		    box-shadow:0px 0px 0px 5px #49736b inset;
+		    font-family: Agency;
+			font-size: 2.5vh;
+			background-color: #49736b;
+		}
 	</style>
 </head>
 <body>
 	<div class='wrapper'>
+		<div><img class='Logout2' src="{% static "\Resource\AI\Intro\SVG\Asset_20.svg" %}"></div>
 		<div><img class='Logo2' src="{% static "\Resource\AI\Intro\SVG\Asset_8.png" %}"></div>
 		<div><img class='Box' src="{% static "\Resource\AI\consultant\SVG\Asset_1.svg" %}"></div>
 		<div><img class='house1 slide-bottom' src="{% static "\Resource\AI\consultant\SVG\Asset_2.svg" %}"></div>
@@ -163,7 +177,7 @@
 	            <input type="text" name="floor" value="&nbsp;&nbsp;&nbsp;&nbsp;">
 	            <input type="text" name="rooms" value="&nbsp;&nbsp;&nbsp;&nbsp;">
 	            <input type="text" name="years" value="&nbsp;&nbsp;&nbsp;&nbsp;">
-							<button type="submit">GO</button>
+				<button class="submit" type="submit">GO</button>
 				</form>
 			</div>
 		</div>
@@ -180,18 +194,18 @@
                 <div class="modal-body">
                     <div class="GO X" data-dismiss="modal">X</div>
                     <div class="LoginHead">LOGIN</div>
-										<form method="POST">
-											{% csrf_token %}
-											<input class="LoginBody" type="text" id="id" placeholder="ID">
-											<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
-											<a href='#'><div class="signIn">계정이 없으세요?</div></a>
-											<div class="GO"><button type="button" id="ajaxlogin">GO</button></div>
-										</form>
+					<form method="POST">
+						{% csrf_token %}
+						<input class="LoginBody" type="text" id="id" placeholder="ID">
+						<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
+						<a href='#'><div class="signIn">계정이 없으세요?</div></a>
+						<div class="GO"><button class="GO" type="button" id="ajaxlogin">GO</button></div>
+					</form>
                 </div>
             </div>
         </div>
     </div>
- </div>
+</div>
 </body>
 
 </html>
@@ -216,6 +230,8 @@
 					$('#loginModal').modal('hide');
 					$('.Login2').css("display", "none");
 					$('.Login1', parent.frames["intro"].document).css("display", "none");
+					$('.Logout2').css("display", "block");
+					$('.Logout1', parent.frames["intro"].document).css("display", "block");
 				}else{
 					alert('Login Fail')
 				}

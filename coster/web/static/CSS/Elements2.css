@@ -19,7 +19,14 @@
 			height: 7.3vh;
 			top: 6vh;
 			left: 161vh;
-		}		
+		}	
+		.Logout2 {
+			position : absolute ;
+			height: 7.3vh;
+			top: 6vh;
+			left: 161vh;
+			display: none;
+		}	
 		.Box {
 			position : absolute ;
 			height: 99.8vh;
@@ -49,9 +56,9 @@
 		}
 		.fill {
 			position : relative;
-			height: 57.1vh;
+			height: 60.1vh;
 			width: 58.2vh;
-			top: 19.3vh;
+			top: 10vh;
 			left: 74.9vh;
 			background-color: rgba(255, 255, 72556, 0.5);
 			color:white;
@@ -156,14 +163,16 @@
 		.modal-dialog {
 			width : 43vh;
 		}
-		.GO {
-			font-family: Agency;
-			font-size: 5vh;
-			color : black;
-			border-color: black;
-			border-width: 1vh;
-			text-align: right;
-
+		.submit {
+		    background-color: none;
+		    border: none;
+		    color: black;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 0px;
+		    cursor: pointer;
 		}
 		a {
 			color: black;
