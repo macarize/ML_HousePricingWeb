@@ -36,13 +36,14 @@
 			width : 43vh;
 		}
 		.GO {
+			background-color: transparent !important;
+    		background-image: none !important;
+    		border-color: transparent;
+   			border: none;
 			font-family: Agency;
 			font-size: 5vh;
 			color : black;
-			border-color: black;
-			border-width: 1vh;
 			text-align: right;
-
 		}
 		a {
 			color: black;
