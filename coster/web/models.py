@@ -11,6 +11,7 @@ class consulting(models.Model):
     si = models.CharField(max_length=100)
     gu = models.CharField(max_length=100)
     dong = models.CharField(max_length=100, primary_key=True)
+    type = models.CharField(max_length=100)
     theta0 = models.FloatField()
     theta1 = models.FloatField()
     theta2 = models.FloatField()
