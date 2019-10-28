@@ -41,30 +41,96 @@
 	</style>
 </head>
 <body>
+	<button type="button" id="ajaxlogout"><div><img class='Logout3' src="{% static "\Resource\AI\Intro\SVG\Asset_20.svg" %}"></div></button>
 	<div><img class='RBox' src="{% static "\Resource\AI\Results\SVG\Asset_3.svg" %}"></div>
 	<div><img class='RTitle' src="{% static "\Resource\AI\Results\SVG\Asset_4.svg" %}"></div>
 	<div><img class='LogoW' src="{% static "\Resource\AI\Results\SVG\Asset_6.png" %}"></div>
 	<div><input class='readonlyBox' type="text" name="resoults" value="{{result}}" readonly></div>
 	<div class='suggestion'><a href='#'>나에게 꼭 맞는 중계소 찾기</a></div>
-	<div class="container">
-    <a href="#myModal" role="button" data-toggle="modal">
-    <img class="Login3" src="..\..\static\Resource\AI\Results\SVG\Asset_5.svg"></a>
+	<div class="container"> <!-- Trigger the modal with a button -->
+	  <a href="#loginModal" role="button" data-toggle="modal">
+	  <img class=Login3 src="{% static "\Resource\AI\Intro\SVG\Asset_9.svg" %}"></a>
 	</div>
 	</button>
-    <div class="modal modal-center fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-center">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="GO X" data-dismiss="modal">X</div>
-                    <div class="LoginHead">LOGIN</div>
-                    <input class="LoginBody" type="text" name="ID" placeholder="ID">
-                    <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
-                    <a href='#'><div class="signIn">계정이 없으세요?</div></a>
-                    <a href="#"><div class="GO"><button class="GO">GO</button></div></a>
-                </div>
-            </div>
-        </div>
-    </div>
-	</div>
+	  <div class="modal modal-center fade" id="loginModal" role="dialog">
+	    <div class="modal-dialog modal-center">
+	      <div class="modal-content">
+	          <div class="modal-body">
+	            <div class="GO X" data-dismiss="modal">X</div>
+	            <div class="LoginHead">LOGIN</div>
+				<form method="POST">
+					{% csrf_token %}
+					<input class="LoginBody" type="text" id="id" placeholder="ID">
+					<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
+					<a href='#'><div class="signIn">계정이 없으세요?</div></a>
+					<div class="GO"><button class="GO" type="button" id="ajaxlogin">GO</button></div>
+				</form>
+	          </div>
+	      </div>
+	    </div>
+	  </div>
 </body>
 </html>
+
+<script>
+	//login ajax
+	$('#ajaxlogin').click(function(){
+		var id = $('#id').val()
+		var pw = $('#pw').val()
+
+		$.ajax({
+			type:'POST',
+			url:'login',
+			data:{
+				'id':id,
+				'pw':pw
+			},
+			dataType:'json',
+			success:function(result){
+				console.log(result.login)
+				if(result.login != null){
+					$('#loginModal').modal('hide');
+					$('.Login1', parent.frames["intro"].document).css("display", "none");
+					$('.Login2', parent.frames["consultant"].document).css("display", "none");
+					$('.Login3').css("display", "none");
+					$('.Login4', parent.frames["Seller"].document).css("display", "none");
+					$('.Logout1', parent.frames["intro"].document).css("display", "block");
+					$('.Logout2', parent.frames["consultant"].document).css("display", "block");
+					$('.Logout2', parent.frames["consultant"].document).css("z-index", "1");
+					$('.Logout3').css("display", "block");
+					$('.Logout4', parent.frames["Seller"].document).css("display", "block");
+
+				}else{
+					alert('Login Fail')
+				}
+			}
+		})
+	})
+
+	//logout ajax
+	$('#ajaxlogout').click(function(){
+
+				$.ajax({
+					type:'POST',
+					url:'logout',
+					data:{
+					},
+					dataType:'json',
+					success:function(result){
+						if(result.login == null){
+							$('.Login1', parent.frames["intro"].document).css("display", "block");
+							$('.Login2', parent.frames["consultant"].document).css("display", "block");
+							$('.Login3').css("display", "block");
+							$('.Login4', parent.frames["Seller"].document).css("display", "block");
+							$('.Logout1', parent.frames["intro"].document).css("display", "none");
+							$('.Logout2', parent.frames["consultant"].document).css("display", "none");
+							$('.Logout3').css("display", "none");
+							$('.Logout4', parent.frames["Seller"].document).css("display", "none");
+
+						}else{
+							alert('Login Fail')
+						}
+					}
+				})
+	})
+</script>

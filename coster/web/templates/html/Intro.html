@@ -134,6 +134,7 @@
 					$('.Login4', parent.frames["Seller"].document).css("display", "none");
 					$('.Logout1').css("display", "block");
 					$('.Logout2', parent.frames["consultant"].document).css("display", "block");
+					$('.Logout2', parent.frames["consultant"].document).css("z-index", "1");
 					$('.Logout3', parent.frames["Results"].document).css("display", "block");
 					$('.Logout4', parent.frames["Seller"].document).css("display", "block");
 
@@ -154,7 +155,6 @@
 					},
 					dataType:'json',
 					success:function(result){
-						console.log(result.login)
 						if(result.login == null){
 							$('.Login1').css("display", "block");
 							$('.Login2', parent.frames["consultant"].document).css("display", "block");
