@@ -154,25 +154,27 @@
 			<button class="FindLoc formStyle">찾기</button>
 		</form>
 	</div>
-	<div class="container">
-    <a href="#myModal" role="button" data-toggle="modal">
-    <img class="Login4" src="..\..\static\Resource\AI\Results\SVG\Asset_5.svg"></a>
+	<div class="container"> <!-- Trigger the modal with a button -->
+	  <a href="#loginModal" role="button" data-toggle="modal">
+	  <img class=Login1 src="{% static "\Resource\AI\Intro\SVG\Asset_9.svg" %}"></a>
 	</div>
 	</button>
-    <div class="modal modal-center fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-center">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="GO X" data-dismiss="modal">X</div>
-                    <div class="LoginHead">LOGIN</div>
-                    <input class="LoginBody" type="text" name="ID" placeholder="ID">
-                    <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
-                    <a href='#'><div class="signIn">계정이 없으세요?</div></a>
-                    <a href="#"><div class="GO"><button class="GO">GO</button></div></a>
-                </div>
-            </div>
-        </div>
-    </div>
-	</div>
+	  <div class="modal modal-center fade" id="loginModal" role="dialog">
+	    <div class="modal-dialog modal-center">
+	      <div class="modal-content">
+	          <div class="modal-body">
+	            <div class="GO X" data-dismiss="modal">X</div>
+	            <div class="LoginHead">LOGIN</div>
+				<form method="POST">
+					{% csrf_token %}
+					<input class="LoginBody" type="text" id="id" placeholder="ID">
+					<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
+					<a href='#'><div class="signIn">계정이 없으세요?</div></a>
+					<div class="GO"><button class="GO" type="button" id="ajaxlogin">GO</button></div>
+				</form>
+	          </div>
+	      </div>
+	    </div>
+	  </div>
 </body>
 </html>
