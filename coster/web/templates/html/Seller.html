@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<title></title>
+	{% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<!--jquery 3.4.1 -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
+	<style type="text/css">
+		html, body {
+		margin :0;
+		padding: 0;
+	    background:url({% static "sellerBackground.svg" %}) no-repeat fixed;
+	    background-size: cover;
+		}
+		body::-webkit-scrollbar {
+    		display: none;
+		}
+	</style>
+	<style type="text/css">
+		@font-face {
+	    font-family: Agency;
+	    src: url({% static "AgencyFB-Bold.ttf" %});
+		}
+		@font-face {
+	    font-family: Nanum;
+	    src: url({% static "NanumSquare_acB.ttf" %});
+		}
+	</style>
+	<style type="text/css">
+		html, body {
+		margin :0;
+		padding: 0;
+	    background:url({% static "sellerBackground.svg" %}) no-repeat fixed;
+	    background-size: cover;
+		}
+		body::-webkit-scrollbar {
+    		display: none;
+		}
+	</style>
+	<style type="text/css">
+		@font-face {
+	    font-family: Agency;
+	    src: url({% static "AgencyFB-Bold.ttf" %});
+		}
+		@font-face {
+	    font-family: Nanum;
+	    src: url({% static "NanumSquare_acB.ttf" %});
+		}
+	</style>
+	<style type="text/css">
+		.LoginHead {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+		}
+		.LoginS {
+			position : absolute ;
+			height: 7.3vh;
+			top: 6vh;
+			left: 161vh;
+		}
+		.LogoW {
+			position : absolute ;
+			height: 7.3vh;
+			top: 6vh;
+			left: 176vh;
+		}
+		.SBox {
+			position : absolute;
+			height: 48.3vh;
+			top: 5vh;
+			left: 8.8vh;
+		}
+		.dia {
+			position : absolute;
+			height: 100vh;
+			top: 0vh;
+			left: 0vh;
+		}
+		.SDeco {
+			position : absolute;
+			height: 7.1vh;
+			top: 7.55vh;
+			left: 12vh;
+		}
+		.Stitle {
+			position: absolute;
+			font-family: Nanum;
+			font-size: 5.2vh;
+			color: white;
+			top: 15vh;
+			left: 15vh;
+		}
+		.location{
+			position: absolute;
+			height: 6.6vh;
+			width: 48.8vh;
+			top: 28.7vh;
+			left: 26.8vh;
+		}
+		.locationD{
+			position: absolute;
+			height: 6.6vh;
+			width: 66.8vh;
+			top: 38.7vh;
+			left: 26.8vh;
+		}
+		.FindLoc{
+			position: absolute;
+			height: 6.6vh;
+			width: 15.6vh;
+			top: 28.7vh;
+			left: 77.9vh;
+			font-family: Nanum;
+			font-size: 3vh;
+		}
+		.formStyle {
+			background-color: #3F3F3F;
+			border-width: 2pt;
+			border-color: white;
+			border-radius: 10px;
+			border-style: solid;
+			color: white;
+		}
+		.Sfind {
+			position: absolute;
+			height: 11.7vh;
+			width: 66.3vh;
+			top: 47.2vh;
+			left: 77.4vh;
+		}
+		a:link { color: white; text-decoration: none;}
+		a:visited { color: white; text-decoration: none;}
+		a:hover { color: white; text-decoration: none;}
+	</style>
+</head>
+<body>
+	<div><img class='dia' src="{% static "\Resource\AI\Seller\SVG\Asset_4.svg" %}"></div>
+	<div><img class='LogoW' src="{% static "\Resource\AI\Results\SVG\Asset_6.png" %}"></div>
+	<div><img class='SBox' src="{% static "\Resource\AI\Seller\SVG\Asset_1.svg" %}"></div>
+	<div><img class='SDeco' src="{% static "\Resource\AI\Seller\SVG\Asset_3.svg" %}"></div>
+	<div><img class='Sfind' src="{% static "\Resource\AI\Seller\SVG\Asset_5.svg" %}"></div>
+	<div class="Stitle">매물의 주소를 입력해 주세요</div>
+	<div>
+		<form>
+			<input class='location formStyle' type="text" readonly>
+			<input class='locationD formStyle' type="text">
+			<button class="FindLoc formStyle">찾기</button>
+		</form>
+	</div>
+	<div class="container">
+    <a href="#myModal" role="button" data-toggle="modal">
+    <img class="Login4" src="..\..\static\Resource\AI\Results\SVG\Asset_5.svg"></a>
+	</div>
+	</button>
+    <div class="modal modal-center fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-center">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="GO X" data-dismiss="modal">X</div>
+                    <div class="LoginHead">LOGIN</div>
+                    <input class="LoginBody" type="text" name="ID" placeholder="ID">
+                    <input class="LoginBody" type="password" name="PASSWORD" placeholder="PASSWORD">
+                    <a href='#'><div class="signIn">계정이 없으세요?</div></a>
+                    <a href="#"><div class="GO"><button class="GO">GO</button></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+	</div>
+</body>
+</html>

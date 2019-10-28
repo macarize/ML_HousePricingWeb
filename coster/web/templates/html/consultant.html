@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+	<title></title>
+	{% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static "\css\Load.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "\css\Elements2.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
+	<style type="text/css">
+		html, body {
+		margin :0;
+		padding: 0;
+	    background:url({% static "consultantBackground.svg" %}) no-repeat fixed;
+	    background-size: cover;
+		}
+		body::-webkit-scrollbar {
+    		display: none;
+		}
+	</style>
+	<style type="text/css">
+		.flash-bang {
+		  -webkit-animation: flashBang 1 2s 1s linear forwards;
+		  -moz-animation: flashBang 1 2s 1s linear forwards;
+		  -ms-animation: flashBang 1 2s 1s linear forwards;
+		  -o-animation: flashBang 1 2s 1s linear forwards;
+		  animation: flashBang 1 2s 1s linear forwards;
+		}
+		@-webkit-keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@-moz-keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@-ms-keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@-o-keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@-moz-keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@-webkit-keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@-o-keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@keyframes flashBang {
+		  0%, 20% {
+		    opacity: 0;
+		    visibility: hidden;
+		  }
+		  10%, 30%, 100% {
+		    opacity: 1;
+		    visibility: visible;
+		  }
+		}
+		@font-face {
+	    font-family: Agency;
+	    src: url({% static "AgencyFB-Bold.ttf" %});
+		}
+		@font-face {
+	    font-family: Nanum;
+	    src: url({% static "NanumSquare_acB.ttf" %});
+		}
+		.LoginHead {
+			font-family: Agency;
+			font-size: 5vh;
+			color : black;
+		}
+		.submit {
+			float:right;
+			color:white;
+			width: 13vh;
+			margin-right: 4vh;
+			line-height: 4vh;
+			border-radius: 50px;
+			border-style: hidden;
+		    box-shadow:0px 0px 0px 5px #49736b inset;
+		    font-family: Agency;
+			font-size: 2.5vh;
+			background-color: #49736b;
+		}
+	</style>
+</head>
+<body>
+	<div class='wrapper'>
+		<div><img class='Logout2' src="{% static "\Resource\AI\Intro\SVG\Asset_20.svg" %}"></div>
+		<div><img class='Logo2' src="{% static "\Resource\AI\Intro\SVG\Asset_8.png" %}"></div>
+		<div><img class='Box' src="{% static "\Resource\AI\consultant\SVG\Asset_1.svg" %}"></div>
+		<div><img class='house1 slide-bottom' src="{% static "\Resource\AI\consultant\SVG\Asset_2.svg" %}"></div>
+		<div><img class='house2 slide-bottom' src="{% static "\Resource\AI\consultant\SVG\Asset_3.svg" %}"></div>
+		<div><img class='house3 slide-bottom ' src="{% static "\Resource\AI\consultant\SVG\Asset_4.svg" %}"></div>
+		<div><img class='text swing-in-top-fwd' src="{% static "\Resource\AI\consultant\SVG\Asset_6.svg" %}"></div>
+		<div><img class='deco flash-bang' src="{% static "\Resource\AI\consultant\SVG\Asset_7.svg" %}"></div>
+		<div class='fill fade-in'>
+			<div class="list">
+				<div>지역</div>
+				<div>매물종류</div>
+				<div>평수</div>
+				<div>층수</div>
+				<div>방수</div>
+				<div>준공년</div>
+			</div>
+			<div class="form">
+				<form method="POST" onsubmit="return check()">
+							{% csrf_token %}
+							<select id="si">
+								<option value="선택" selected>&nbsp;선택</option>
+								<option value="서울시">&nbsp;서울시</option>
+								<option value="부산">&nbsp;부산</option>
+								<option value="대구">&nbsp;대구</option>
+	            </select>
+	            <select name="gu" id="gu">
+	                <option value="선택">&nbsp;선택</option>
+	            </select>
+	            <select name="dong" id="dong">
+	                <option value="">&nbsp;선택</option>
+	            </select>
+	            <input type="text" name="kind" value="&nbsp;&nbsp;&nbsp;&nbsp;">
+	            <input type="text" name="space" value="&nbsp;&nbsp;&nbsp;&nbsp;">
+	            <input type="text" name="floor" value="&nbsp;&nbsp;&nbsp;&nbsp;">
+	            <input type="text" name="rooms" value="&nbsp;&nbsp;&nbsp;&nbsp;">
+	            <input type="text" name="years" value="&nbsp;&nbsp;&nbsp;&nbsp;">
+				<button class="submit" type="submit">GO</button>
+				</form>
+			</div>
+		</div>
+	</div>
+<div class="container">
+  <a href="#loginModal" role="button" data-toggle="modal">
+    <img class="Login2" src="..\..\static\Resource\AI\Intro\SVG\Asset_9.svg">
+	</a>
+</div>
+</button>
+    <div class="modal modal-center fade" id="loginModal" role="dialog">
+        <div class="modal-dialog modal-center">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="GO X" data-dismiss="modal">X</div>
+                    <div class="LoginHead">LOGIN</div>
+					<form method="POST">
+						{% csrf_token %}
+						<input class="LoginBody" type="text" id="id" placeholder="ID">
+						<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
+						<a href='#'><div class="signIn">계정이 없으세요?</div></a>
+						<div class="GO"><button class="GO" type="button" id="ajaxlogin">GO</button></div>
+					</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
+<script>
+	//login ajax
+	$('#ajaxlogin').click(function(){
+		var id = $('#id').val()
+		var pw = $('#pw').val()
+
+		$.ajax({
+			type:'POST',
+			url:'login',
+			data:{
+				'id':id,
+				'pw':pw
+			},
+			dataType:'json',
+			success:function(result){
+				console.log(result.login)
+				if(result.login != null){
+					$('#loginModal').modal('hide');
+					$('.Login2').css("display", "none");
+					$('.Login1', parent.frames["intro"].document).css("display", "none");
+					$('.Logout2').css("display", "block");
+					$('.Logout1', parent.frames["intro"].document).css("display", "block");
+				}else{
+					alert('Login Fail')
+				}
+			}
+		})
+	})
+  //Login Check
+  function check(){
+    if('{{login}}' != 'no'){
+      return true;
+    }else{
+      alert("로그인이 필요한 서비스입니다.");
+      return false;
+    }
+  }
+  //시 버튼 ajax 처리
+  $('#si').change(function(){
+    var data = $('#si option:selected').val()
+    $.ajax({
+      type: 'POST',
+      url: 'si',
+      data:{
+        'si':data
+      },
+      success:function(result){
+        console.log('SUCCESS')
+        console.log(result.gu)
+        $('#gu').empty();
+        $('#gu').append("<option>선택</option>")
+        $('#dong').empty();
+        $('#dong').append("<option>선택</option>")
+        for(var i=0; i<result.gu.length; i++){
+          console.log(result.gu[i])
+          var option = "<option>" + result.gu[i] + "</option>";
+          $('#gu').append(option)
+        }
+      }
+    })
+  })
+  //구 버튼 ajax 처리
+  $('#gu').change(function(){
+    var data = $('#gu option:selected').val()
+    $.ajax({
+      type: 'POST',
+      url: 'gu',
+      data:{
+        'gu':data
+      },
+      success:function(result){
+        console.log('SUCCESS')
+        console.log(result.dong)
+        $('#dong').empty();
+        $('#dong').append("<option>선택</option>")
+        for(var i=0; i<result.dong.length; i++){
+          console.log(result.dong[i])
+          var option = "<option>" + result.dong[i] + "</option>";
+          $('#dong').append(option)
+        }
+      }
+    })
+  })
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--jquery 3.4.1 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- bootstrap 3.3.2 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <form method="POST" onsubmit="return check()">
+        {% csrf_token %}
+        <select id="si">
+          <option value="select" selected>선택</option>
+          <option value="서울시">서울시</option>
+          <option value="부산">부산</option>
+          <option value="대구">대구</option>
+        </select>
+        <select id="gu">
+          <option value="select" selected>선택</option>
+        </select>
+        <select id="dong" name="dong">
+          <option value="select" selected>선택</option>
+        </select>
+        {{form.as_p}}
+        <button type="submit" class="run">RUN</button>
+    </form>
+</body>
+</html>
+
+<script>
+  //Login Check
+  function check(){
+    if('{{login}}' != 'no'){
+      return true;
+    }else{
+      alert("로그인이 필요한 서비스입니다.");
+      return false;
+    }
+  }
+  //시 버튼 ajax 처리
+  $('#si').change(function(){
+    var data = $('#si option:selected').val()
+    $.ajax({
+      type: 'POST',
+      url: 'si',
+      data:{
+        'si':data
+      },
+      success:function(result){
+        console.log('SUCCESS')
+        console.log(result.gu)
+        $('#gu').empty();
+        $('#gu').append("<option>선택</option>")
+        $('#dong').empty();
+        $('#dong').append("<option>선택</option>")
+        for(var i=0; i<result.gu.length; i++){
+          console.log(result.gu[i])
+          var option = "<option>" + result.gu[i] + "</option>";
+          $('#gu').append(option)
+        }
+      }
+    })
+  })
+  //구 버튼 ajax 처리
+  $('#gu').change(function(){
+    var data = $('#gu option:selected').val()
+    $.ajax({
+      type: 'POST',
+      url: 'gu',
+      data:{
+        'gu':data
+      },
+      success:function(result){
+        console.log('SUCCESS')
+        console.log(result.dong)
+        $('#dong').empty();
+        $('#dong').append("<option>선택</option>")
+        for(var i=0; i<result.dong.length; i++){
+          console.log(result.dong[i])
+          var option = "<option>" + result.dong[i] + "</option>";
+          $('#dong').append(option)
+        }
+      }
+    })
+  })
+</script>
