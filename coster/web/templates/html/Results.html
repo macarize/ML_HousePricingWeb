@@ -109,7 +109,7 @@
 
 	//logout ajax
 	$('#ajaxlogout').click(function(){
-
+			if('{{login}}' != null){
 				$.ajax({
 					type:'POST',
 					url:'logout',
@@ -117,7 +117,6 @@
 					},
 					dataType:'json',
 					success:function(result){
-						if(result.login == null){
 							$('.Login1', parent.frames["intro"].document).css("display", "block");
 							$('.Login2', parent.frames["consultant"].document).css("display", "block");
 							$('.Login3').css("display", "block");
@@ -126,11 +125,10 @@
 							$('.Logout2', parent.frames["consultant"].document).css("display", "none");
 							$('.Logout3').css("display", "none");
 							$('.Logout4', parent.frames["Seller"].document).css("display", "none");
-
-						}else{
-							alert('Login Fail')
-						}
 					}
 				})
+			}else{
+				alert('Login Fail')
+			}
 	})
 </script>
