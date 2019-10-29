@@ -57,7 +57,7 @@ def Hub(request):
     return render(request, 'html/Hub.html')
 
 def Intro(request):
-    login = request.session.get('login', 'notlogin')
+    login = request.session.get('login', 'nologin')
 
     return render(request, 'html/Intro.html', {'login':login})
 
@@ -78,7 +78,8 @@ def consultant(request):
 
         return render(request, 'html/Results.html', {'result': result})
     else:
-        return render(request, 'html/consultant.html')
+        login = request.session.get('login', 'nologin')
+        return render(request, 'html/consultant.html', {'login':login})
 
 def Results(request):
     return render(request, 'html/Results.html')

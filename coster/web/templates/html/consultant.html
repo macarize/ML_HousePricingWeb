@@ -158,9 +158,9 @@
 				<div>준공년</div>
 			</div>
 			<div class="form">
-				<form method="POST" onsubmit="return check()">
+				<form method="POST" id="consultant" onsubmit="return check()">
 							{% csrf_token %}
-							<select id="si">
+							<select name="si" id="si">
 								<option value="선택" selected>&nbsp;선택</option>
 								<option value="서울시">&nbsp;서울시</option>
 								<option value="부산">&nbsp;부산</option>
@@ -172,12 +172,17 @@
 	            <select name="dong" id="dong">
 	                <option value="">&nbsp;선택</option>
 	            </select>
-	            <input type="text" name="kind" value="&nbsp;&nbsp;&nbsp;&nbsp;">
-	            <input type="text" name="space" value="&nbsp;&nbsp;&nbsp;&nbsp;">
-	            <input type="text" name="floor" value="&nbsp;&nbsp;&nbsp;&nbsp;">
-	            <input type="text" name="rooms" value="&nbsp;&nbsp;&nbsp;&nbsp;">
-	            <input type="text" name="years" value="&nbsp;&nbsp;&nbsp;&nbsp;">
-				<button class="submit" type="submit">GO</button>
+							<select id="type" name="type">
+								<option value="선택" selected>&nbsp;선택</option>
+								<option value="아파트">&nbsp;아파트</option>
+								<option value="빌라">&nbsp;빌라</option>
+								<option value="오피스텔">&nbsp;오피스텔</option>
+							</select>
+	            <input type="text" id="space" name="space">
+	            <input type="text" id="floor" name="floor">
+	            <input type="text" id="rooms" name="rooms">
+	            <input type="text" id="years" name="years">
+							<button class="submit" type="submit">GO</button>
 				</form>
 			</div>
 		</div>
@@ -204,6 +209,9 @@
 	      </div>
 	    </div>
 	  </div>
+
+		<!-- session -->
+		<input type="hidden" id="login" value="{{login}}">
 </body>
 
 </html>
@@ -235,6 +243,8 @@
 					$('.Logout2').css("z-index", "1");
 					$('.Logout3', parent.frames["Results"].document).css("display", "block");
 					$('.Logout4', parent.frames["Seller"].document).css("display", "block");
+
+					$('#login').val(result.login)
 				}else{
 					alert('Login Fail')
 				}
@@ -243,7 +253,7 @@
 	})
 	//logout ajax
 	$('#ajaxlogout').click(function(){
-		if('{{login}}' != null){
+		if($('#login').val() != 'nologin'){
 				$.ajax({
 					type:'POST',
 					url:'logout',
@@ -259,6 +269,8 @@
 						$('.Logout2').css("display", "none");
 						$('.Logout3', parent.frames["Results"].document).css("display", "none");
 						$('.Logout4', parent.frames["Seller"].document).css("display", "none");
+
+						$('#login').val('nologin')
 					}
 				})
 			}else{
@@ -267,10 +279,21 @@
 	})
   //Login Check
   function check(){
-    if('{{login}}' != 'no'){
-      return true;
+    if($('#login').val() != 'nologin'){
+			//form안의 입력값 체크
+			if($('#si').val() == '선택' || $('#gu').val() == '선택' || $('#dong').val() == '선택'){
+				alert("지역을 선택해주세요");
+				return false;
+			}else{
+				if($('#space').val == "" || $('#floor').val == "" || $('#rooms').val == "" || $('#years').val == ""){
+					alert("값을 입력해주세요")
+					return false;
+				}else{
+					return true;
+				}
+			}
     }else{
-      alert("로그인이 필요한 서비스입니다.");
+      alert("로그인이 필요한 서비스입니다");
       return false;
     }
   }

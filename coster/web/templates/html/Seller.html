@@ -212,6 +212,7 @@ $('#ajaxlogin').click(function(){
 				$('.Logout3', parent.frames["Results"].document).css("display", "block");
 				$('.Logout4').css("display", "block");
 
+				$('#login', parent.frames["consultant"].document).val(result.login)
 			}else{
 				alert('Login Fail')
 			}
@@ -237,6 +238,8 @@ $('#ajaxlogout').click(function(){
 					$('.Logout2', parent.frames["consultant"].document).css("display", "none");
 					$('.Logout3', parent.frames["Results"].document).css("display", "none");
 					$('.Logout4').css("display", "none");
+
+					$('#login', parent.frames["consultant"].document).val('nologin')
 				}
 			})
 		}else{

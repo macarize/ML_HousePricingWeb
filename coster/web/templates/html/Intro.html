@@ -111,6 +111,7 @@
 
 
 <script>
+	console.log($('#login', parent.frames["consultant"].document).val());
 	//login ajax
 	$('#ajaxlogin').click(function(){
 		var id = $('#id').val()
@@ -138,6 +139,7 @@
 					$('.Logout3', parent.frames["Results"].document).css("display", "block");
 					$('.Logout4', parent.frames["Seller"].document).css("display", "block");
 
+					$('#login', parent.frames["consultant"].document).val(result.login)
 				}else{
 					alert('Login Fail')
 				}
@@ -147,7 +149,7 @@
 
 	//logout ajax
 	$('#ajaxlogout').click(function(){
-			if('{{login}}' != null){
+			if($('#login', parent.frames["consultant"].document).val() != null){
 				$.ajax({
 					type:'POST',
 					url:'logout',
@@ -163,6 +165,8 @@
 						$('.Logout2', parent.frames["consultant"].document).css("display", "none");
 						$('.Logout3', parent.frames["Results"].document).css("display", "none");
 						$('.Logout4', parent.frames["Seller"].document).css("display", "none");
+
+						$('#login', parent.frames["consultant"].document).val('nologin')
 					}
 				})
 		}else{
@@ -172,7 +176,7 @@
 
 	//login check
 	$(document).ready(function(){
-		if('{{login}}' != 'notlogin'){
+		if($('#login', parent.frames["consultant"].document).val() != 'nologin'){
 			$('.Login1').css("display", "none");
 			$('.Login2', parent.frames["consultant"].document).css("display", "none");
 			$('.Login3', parent.frames["Results"].document).css("display", "none");
