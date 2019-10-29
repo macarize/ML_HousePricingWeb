@@ -57,7 +57,9 @@ def Hub(request):
     return render(request, 'html/Hub.html')
 
 def Intro(request):
-    return render(request, 'html/Intro.html')
+    login = request.session.get('login', 'notlogin')
+
+    return render(request, 'html/Intro.html', {'login':login})
 
 def consultant(request):
     if request.method == 'POST':

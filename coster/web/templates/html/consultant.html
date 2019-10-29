@@ -243,7 +243,7 @@
 	})
 	//logout ajax
 	$('#ajaxlogout').click(function(){
-
+		if('{{login}}' != null){
 				$.ajax({
 					type:'POST',
 					url:'logout',
@@ -251,21 +251,19 @@
 					},
 					dataType:'json',
 					success:function(result){
-						if(result.login == null){
-							$('.Login1', parent.frames["intro"].document).css("display", "block");
-							$('.Login2').css("display", "block");
-							$('.Login3', parent.frames["Results"].document).css("display", "block");
-							$('.Login4', parent.frames["Seller"].document).css("display", "block");
-							$('.Logout1', parent.frames["intro"].document).css("display", "none");
-							$('.Logout2').css("display", "none");
-							$('.Logout3', parent.frames["Results"].document).css("display", "none");
-							$('.Logout4', parent.frames["Seller"].document).css("display", "none");
-
-						}else{
-							alert('Login Fail')
-						}
+						$('.Login1', parent.frames["intro"].document).css("display", "block");
+						$('.Login2').css("display", "block");
+						$('.Login3', parent.frames["Results"].document).css("display", "block");
+						$('.Login4', parent.frames["Seller"].document).css("display", "block");
+						$('.Logout1', parent.frames["intro"].document).css("display", "none");
+						$('.Logout2').css("display", "none");
+						$('.Logout3', parent.frames["Results"].document).css("display", "none");
+						$('.Logout4', parent.frames["Seller"].document).css("display", "none");
 					}
 				})
+			}else{
+				alert('Login Fail')
+			}
 	})
   //Login Check
   function check(){

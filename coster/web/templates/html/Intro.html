@@ -147,7 +147,7 @@
 
 	//logout ajax
 	$('#ajaxlogout').click(function(){
-
+			if('{{login}}' != null){
 				$.ajax({
 					type:'POST',
 					url:'logout',
@@ -155,20 +155,33 @@
 					},
 					dataType:'json',
 					success:function(result){
-						if(result.login == null){
-							$('.Login1').css("display", "block");
-							$('.Login2', parent.frames["consultant"].document).css("display", "block");
-							$('.Login3', parent.frames["Results"].document).css("display", "block");
-							$('.Login4', parent.frames["Seller"].document).css("display", "block");
-							$('.Logout1').css("display", "none");
-							$('.Logout2', parent.frames["consultant"].document).css("display", "none");
-							$('.Logout3', parent.frames["Results"].document).css("display", "none");
-							$('.Logout4', parent.frames["Seller"].document).css("display", "none");
-
-						}else{
-							alert('Login Fail')
-						}
+						$('.Login1').css("display", "block");
+						$('.Login2', parent.frames["consultant"].document).css("display", "block");
+						$('.Login3', parent.frames["Results"].document).css("display", "block");
+						$('.Login4', parent.frames["Seller"].document).css("display", "block");
+						$('.Logout1').css("display", "none");
+						$('.Logout2', parent.frames["consultant"].document).css("display", "none");
+						$('.Logout3', parent.frames["Results"].document).css("display", "none");
+						$('.Logout4', parent.frames["Seller"].document).css("display", "none");
 					}
 				})
+		}else{
+			alert('Login Fail')
+		}
+	})
+
+	//login check
+	$(document).ready(function(){
+		if('{{login}}' != 'notlogin'){
+			$('.Login1').css("display", "none");
+			$('.Login2', parent.frames["consultant"].document).css("display", "none");
+			$('.Login3', parent.frames["Results"].document).css("display", "none");
+			$('.Login4', parent.frames["Seller"].document).css("display", "none");
+			$('.Logout1').css("display", "block");
+			$('.Logout2', parent.frames["consultant"].document).css("display", "block");
+			$('.Logout2', parent.frames["consultant"].document).css("z-index", "1");
+			$('.Logout3', parent.frames["Results"].document).css("display", "block");
+			$('.Logout4', parent.frames["Seller"].document).css("display", "block");
+		}
 	})
 </script>
