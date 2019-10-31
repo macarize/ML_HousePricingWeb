@@ -178,10 +178,10 @@
 								<option value="빌라">&nbsp;빌라</option>
 								<option value="오피스텔">&nbsp;오피스텔</option>
 							</select>
-	            <input type="text" id="space" name="space">
-	            <input type="text" id="floor" name="floor">
-	            <input type="text" id="rooms" name="rooms">
-	            <input type="text" id="years" name="years">
+	            <input type="text" id="space" name="space" value="">
+	            <input type="text" id="floor" name="floor" value="">
+	            <input type="text" id="rooms" name="rooms" value="">
+	            <input type="text" id="years" name="years" value="">
 							<button class="submit" type="submit">GO</button>
 				</form>
 			</div>
@@ -284,13 +284,11 @@
 			if($('#si').val() == '선택' || $('#gu').val() == '선택' || $('#dong').val() == '선택'){
 				alert("지역을 선택해주세요");
 				return false;
+			}else if($('#space').val() == '' || $('#floor').val() == '' || $('#rooms').val() == '' || $('#years').val() == ''){
+				alert("값을 입력해주세요")
+				return false;
 			}else{
-				if($('#space').val == "" || $('#floor').val == "" || $('#rooms').val == "" || $('#years').val == ""){
-					alert("값을 입력해주세요")
-					return false;
-				}else{
-					return true;
-				}
+				return true;
 			}
     }else{
       alert("로그인이 필요한 서비스입니다");
