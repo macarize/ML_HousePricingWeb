@@ -158,7 +158,7 @@
 				<div>준공년</div>
 			</div>
 			<div class="form">
-				<form method="POST" id="consultant" onsubmit="return check()">
+				<form method="POST" id="consultant">
 							{% csrf_token %}
 							<select name="si" id="si">
 								<option value="선택" selected>&nbsp;선택</option>
@@ -182,7 +182,7 @@
 	            <input type="text" id="floor" name="floor" value="">
 	            <input type="text" id="rooms" name="rooms" value="">
 	            <input type="text" id="years" name="years" value="">
-							<button class="submit" type="submit">GO</button>
+							<button class="submit" type="button">GO</button>
 				</form>
 			</div>
 		</div>
@@ -277,24 +277,7 @@
 				alert('Login Fail')
 			}
 	})
-  //Login Check
-  function check(){
-    if($('#login').val() != 'nologin'){
-			//form안의 입력값 체크
-			if($('#si').val() == '선택' || $('#gu').val() == '선택' || $('#dong').val() == '선택'){
-				alert("지역을 선택해주세요");
-				return false;
-			}else if($('#space').val() == '' || $('#floor').val() == '' || $('#rooms').val() == '' || $('#years').val() == ''){
-				alert("값을 입력해주세요")
-				return false;
-			}else{
-				return true;
-			}
-    }else{
-      alert("로그인이 필요한 서비스입니다");
-      return false;
-    }
-  }
+
   //시 버튼 ajax 처리
   $('#si').change(function(){
     var data = $('#si option:selected').val()
@@ -341,4 +324,69 @@
       }
     })
   })
+
+	// //Login Check
+	// function check(){
+	// 	if($('#login').val() != 'nologin'){
+	// 		//form안의 입력값 체크
+	// 		if($('#si').val() == '선택' || $('#gu').val() == '선택' || $('#dong').val() == '선택'){
+	// 			alert("지역을 선택해주세요");
+	// 			return false;
+	// 		}else if($('#space').val() == '' || $('#floor').val() == '' || $('#rooms').val() == '' || $('#years').val() == ''){
+	// 			alert("값을 입력해주세요")
+	// 			return false;
+	// 		}else{
+	// 			return true;
+	// 		}
+	// 	}else{
+	// 		alert("로그인이 필요한 서비스입니다");
+	// 		return false;
+	// 	}
+	// }
+
+	//ajaxSubmit
+	$('.submit').click(function(){
+		//Login Check
+		var check = true;
+
+		if($('#login').val() != 'nologin'){
+			//form안의 입력값 체크
+			if($('#si').val() == '선택' || $('#gu').val() == '선택' || $('#dong').val() == '선택'){
+				alert("지역을 선택해주세요");
+				check = false;
+			}else if($('#space').val() == '' || $('#floor').val() == '' || $('#rooms').val() == '' || $('#years').val() == ''){
+				alert("값을 입력해주세요")
+				check = false;
+			}else{
+				check = true;
+			}
+		}else{
+			alert("로그인이 필요한 서비스입니다");
+			check = false;
+		}
+
+		if(check){
+			var space = $('#space').val()
+			var floor = $('#floor').val()
+			var rooms = $('#rooms').val()
+			var years = $('#years').val()
+			var dong = $('#dong option:selected').val()
+
+			$.ajax({
+				type: 'POST',
+				url: 'submit',
+				data: {
+					'space':space,
+					'floor':floor,
+					'rooms':rooms,
+					'years':years,
+					'dong':dong
+				},
+				success:function(result){
+					console.log(result.value)
+					$('.readonlyBox', parent.frames["Results"].document).val(result.value);
+				}
+			})
+		}
+	})
 </script>
