@@ -62,24 +62,8 @@ def Intro(request):
     return render(request, 'html/Intro.html', {'login':login})
 
 def consultant(request):
-    if request.method == 'POST':
-        # get customer's house info
-        space = request.POST.get('space')
-        floor = request.POST.get('floor')
-        rooms = request.POST.get('rooms')
-        year = request.POST.get('years')
-        dong = request.POST.get('dong')
-        # dong theta값 꺼내오기
-        data = consulting.objects.filter(dong=dong)
-
-        dic = {'year': year, 'rooms': rooms, 'floor': floor, 'space': space}
-        print(dic)
-        result = Main.ml(year, rooms, floor, space, data[0].theta0, data[0].theta1, data[0].theta2, data[0].theta3, data[0].theta4)  # enter into ML model
-
-        return render(request, 'html/Results.html', {'result': result})
-    else:
-        login = request.session.get('login', 'nologin')
-        return render(request, 'html/consultant.html', {'login':login})
+    login = request.session.get('login', 'nologin')
+    return render(request, 'html/consultant.html', {'login':login})
 
 def Results(request):
     return render(request, 'html/Results.html')
@@ -113,3 +97,19 @@ def gu(request):
     result = json.dumps({'dong' : result}) #json 으로 변환
     return HttpResponse(result, content_type ="application/json")
 
+@csrf_exempt
+def submit(request):
+    # get customer's house info
+    space = request.POST.get('space')
+    floor = request.POST.get('floor')
+    rooms = request.POST.get('rooms')
+    years = request.POST.get('years')
+    dong = request.POST.get('dong')
+    print(dong)
+    # dong theta값 꺼내오기
+    data = consulting.objects.filter(dong=dong)
+
+    result = Main.ml(years, rooms, floor, space, data[0].theta0, data[0].theta1, data[0].theta2, data[0].theta3, data[0].theta4)  # enter into ML model
+    result = json.dumps({'value' : result})
+
+    return HttpResponse(result, content_type ="application/json")
