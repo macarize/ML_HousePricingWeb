@@ -5,13 +5,10 @@
 	{% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<!--jquery 3.4.1 -->
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script type="text/javascript">
-	</script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static "\css\LogIn.css" %}">
 	<style type="text/css">
 		html, body {
 		margin :0;
@@ -19,9 +16,7 @@
 	    background:url({% static "sellerBackground.svg" %}) no-repeat fixed;
 	    background-size: cover;
 		}
-		body::-webkit-scrollbar {
-    		display: none;
-		}
+
 	</style>
 	<style type="text/css">
 		@font-face {
@@ -143,21 +138,10 @@
 			top: 47.2vh;
 			left: 77.4vh;
 		}
-		.findSeller {
-			position: absolute;
-			background-color: transparent !important;
-    		background-image: none !important;
-    		border-color: transparent;
-   			border: none;
-			font-family: Nanum;
-			font-size: 4vh;
-			color : white;
-			text-align: middle;
-			top: 50.5vh;
-			left: 86.5vh;
-			width: 30vh;
-		}
-		.suggest {
+		a:link { color: white; text-decoration: none;}
+		a:visited { color: white; text-decoration: none;}
+		a:hover { color: white; text-decoration: none;}
+				.suggest {
 			position: absolute;
 			left: 98.8vh;
 			top: 58vh;
@@ -215,7 +199,6 @@
 	<div><img class='SDeco' src="{% static "\Resource\AI\Seller\SVG\Asset_3.svg" %}"></div>
 	<div><img class='Sfind' src="{% static "\Resource\AI\Seller\SVG\Asset_5.svg" %}"></div>
 	<div class="Stitle">매물의 주소를 입력해 주세요</div>
-	<button class="findSeller">중개업자 찾기 ></button>
 	<div>
 		<form>
 			<input class='location formStyle' type="text" readonly>
