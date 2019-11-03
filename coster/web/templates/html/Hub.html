@@ -2,15 +2,26 @@
 <html>
 <head>
 	<title>HUB</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "\CSS\onepagescroll.css" %}">
+	<script src="{% static "\JS\onepagescroll.js" %}"></script>
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-	<iframe frameborder="0" marginheight="0" src="Intro" name="intro"></iframe>
-	<iframe frameborder="0" marginheight="0" src="consultant" name="consultant"></iframe>
-	<iframe frameborder="0" marginheight="0" src="Results" name="Results"></iframe>
-	<iframe frameborder="0" marginheight="0" src="Seller" name="Seller"></iframe>
-
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			onepagescroll('div.pages',{
+			  animationType: 'ease-in-out', //determine css3 animation that will run when page changes
+			                                //ex) 'ease', 'ease-out-in', 'cubic-bezier(0.2, 0.75, 0.5, 1.15)'
+			  animationTime: 700,           //define how long each page takes to animate, 0 for off
+			  infinite: true,               //back to the last/first page when you scroll at first/last page
+			  pagination: true,             //set show or hide pagination element.
+			  keyboard: true,               //allow up/page-up and down/page-down key for page scroll
+			  direction: 'vertical'         //determine direction of page scroll. options available are 'vertical' and 'horizontal'
+			});
+		});
+	</script>
 	<style type="text/css">
 
 		body, iframe, html {
@@ -21,12 +32,18 @@
 			width: 100vw;
 			height: 100vh;
 		}
-		body::-webkit-scrollbar {
-    		display: none;
+		.stop-scrolling {
+		  height: 100%;
+		  overflow: hidden;
 		}
 	</style>
 </head>
 <body>
-
+	<div class="pages">
+		<section><iframe frameborder="0" marginheight="0" src="Intro" name="intro"></iframe></section>
+		<section><iframe  class="stop-scrolling" frameborder="0" marginheight="0" src="consultant" name="intro"></iframe></section>
+		<section><iframe frameborder="0" marginheight="0" src="Results" name="intro"></iframe></section>
+		<section><iframe frameborder="0" marginheight="0" src="Seller" name="intro"></iframe></section>
+	</div>
 </body>
 </html>
