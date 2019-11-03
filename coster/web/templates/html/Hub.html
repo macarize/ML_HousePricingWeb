@@ -2,46 +2,11 @@
 <html>
 <head>
 	{% load staticfiles %}
-
+	<iframe frameborder="0" marginheight="0" src="Intro" name="intro"></iframe>
+	<iframe frameborder="0" marginheight="0" src="consultant" name="consultant"></iframe>
+	<iframe frameborder="0" marginheight="0" src="Results"></iframe>
+	<iframe frameborder="0" marginheight="0" src="Seller"></iframe>
 	<title>HUB</title>
-
-	<script src="{% static "\JQuary\fullPage.min.js" %}"></script>
-	<script type="text/javascript">
-		var page = new FullPage("#main");
-
-		var page = new FullPage("#main",{
-
-		    // section selector
-		    section: '.section',
-
-		    // animation options
-		    animationDuration: 700,
-		    animationTiming: 'ease',
-		    animationTranform: 'transform',
-
-		    // enable side navigation
-		    pagination: true,
-
-		    // enable keyboard navigation
-		    keyboard: true,
-
-		    // enable touch events
-		    touch: true,
-
-		    // touch limit in ms
-		    touchLimit: 100,
-
-		    // infinite loop
-		    loop: false,
-
-		    // callbacks
-		    onLeave: null,
-		    afterLoad: null,
-		    
-		});
-		page.moveTo(1);
-		page.moveTo(2);
-
 	</script>
 	<style type="text/css">
 		body, iframe, html {
@@ -58,11 +23,5 @@
 	</style>
 </head>
 <body>
-	<div id="main">
-		<iframe frameborder="0" marginheight="0" src="Intro" name="intro"></iframe>
-		<iframe frameborder="0" marginheight="0" src="consultant" name="consultant"></iframe>
-		<iframe frameborder="0" marginheight="0" src="Results"></iframe>
-		<iframe frameborder="0" marginheight="0" src="Seller"></iframe>
-	</div>
 </body>
 </html>
