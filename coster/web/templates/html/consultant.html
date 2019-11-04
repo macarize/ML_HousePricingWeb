@@ -140,7 +140,7 @@
 </head>
 <body>
 	<div class='wrapper'>
-		<button type="button" id="ajaxlogout"><div><img class='Logout2' src="{% static "\Resource\AI\Intro\SVG\Asset_20.svg" %}"></div></button>
+		<a href='#' id="ajaxlogout"><img class='Logout2' src="{% static "\Resource\AI\Intro\SVG\Asset_20.svg" %}"></a>
 		<div><img class='Logo2' src="{% static "\Resource\AI\Intro\SVG\Asset_8.png" %}"></div>
 		<div><img class='Box' src="{% static "\Resource\AI\consultant\SVG\Asset_1.svg" %}"></div>
 		<div><img class='house1 slide-bottom' src="{% static "\Resource\AI\consultant\SVG\Asset_2.svg" %}"></div>
@@ -187,6 +187,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- 로그인 모달 -->
 	<div class="container"> <!-- Trigger the modal with a button -->
 	  <a href="#loginModal" role="button" data-toggle="modal">
 	  <img class=Login2 src="{% static "\Resource\AI\Intro\SVG\Asset_9.svg" %}"></a>
@@ -210,6 +211,26 @@
 	    </div>
 	  </div>
 
+		<!-- 회원가입 모달 -->
+		<div class="modal modal-center fade" id="signupModal" role="dialog">
+	    <div class="modal-dialog modal-center">
+	      <div class="modal-content">
+	          <div class="modal-body">
+	            <div class="GO X" data-dismiss="modal">X</div>
+	            <div class="LoginHead">SIGNUP</div>
+				<form method="POST">
+					{% csrf_token %}
+					<input class="LoginBody" type="text" id="id1" placeholder="ID">
+					<input class="LoginBody" type="text" id="pw1" placeholder="PASSWORD">
+					<input class="LoginBody" type="text" id="pw2" placeholder="PASSWORD CHECK">
+					<input class="LoginBody" type="text" id="name" placeholder="NAME">
+					<input class="LoginBody" type="text" id="phone" placeholder="PHONE">
+					<div class="GO"><button class="GO" type="button" id="signup">GO</button></div>
+				</form>
+	          </div>
+	      </div>
+	    </div>
+	  </div>
 		<!-- session -->
 		<input type="hidden" id="login" value="{{login}}">
 </body>
@@ -251,6 +272,39 @@
 			}
 		})
 	})
+
+	//signup modal
+	$('#signupModal').click(function(){
+		$('#loginModal').modal('hide');
+	})
+
+	//SignUp ajax
+	$('#signup').click(function(){
+		if($('#pw1').val() == $('#pw2').val()){
+			var id = $('#id1').val()
+			var pw = $('#pw1').val()
+			var name = $('#name').val()
+			var phone = $('#phone').val()
+			$.ajax({
+				type:'POST',
+				url:'signup',
+				data:{
+					'id':id,
+					'pw':pw,
+					'name':name,
+					'phone':phone
+				},
+				dataType:'json',
+				success:function(result){
+					console.log("signup success")
+					$('#signupModal').modal('hide');
+				}
+			})
+		}else{
+			alert('비밀번호가 일치하지 않습니다')
+		}
+	})
+
 	//logout ajax
 	$('#ajaxlogout').click(function(){
 		if($('#login').val() != 'nologin'){
