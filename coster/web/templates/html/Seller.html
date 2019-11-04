@@ -196,7 +196,7 @@
 		<div class="testChild"><p>안녕</p></div>
 	</div>
 	<a href='#' id="ajaxlogout"><img class='Logout4' src="{% static "\Resource\AI\Intro\SVG\Asset_20.svg" %}"></a>
-  
+
 	<div><img class='dia' src="{% static "\Resource\AI\Seller\SVG\Asset_4.svg" %}"></div>
 	<div class="SWrapper">
 		<img class='suggest' src="{% static "\Resource\AI\Seller\SVG\Asset_7.svg" %}">
@@ -229,7 +229,7 @@
 					{% csrf_token %}
 					<input class="LoginBody" type="text" id="id" placeholder="ID">
 					<input class="LoginBody" type="password" id="pw" placeholder="PASSWORD">
-					<a href='#'><div class="signIn">계정이 없으세요?</div></a>
+					<a href='#signupModal' role="button" data-toggle="modal"><div class="signIn">계정이 없으세요?</div></a>
 					<div class="GO"><button class="GO" type="button" id="ajaxlogin">GO</button></div>
 				</form>
 	          </div>
