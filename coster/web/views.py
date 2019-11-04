@@ -46,6 +46,23 @@ def login(request):
         return HttpResponse(json.dumps(context), content_type="application/json")
 
 @csrf_exempt
+def signup(request):
+    if request.method == 'POST':
+        #get user info
+        id = request.POST.get('id')
+        pw = request.POST.get('pw')
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+
+        context = {'id': id}
+
+        #signup query
+        info = user(id=id, pw=pw, name=name, phone=phone, power=1)
+        info.save()
+
+        return HttpResponse(json.dumps(context), content_type="application/json")
+
+@csrf_exempt
 def logout(request):
     del request.session['login'] #delete a login session
     context = {
