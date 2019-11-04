@@ -63,6 +63,7 @@ def Intro(request):
 
 def consultant(request):
     login = request.session.get('login', 'nologin')
+
     return render(request, 'html/consultant.html', {'login':login})
 
 def Results(request):
