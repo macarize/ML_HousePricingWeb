@@ -32,7 +32,7 @@ def login(request):
         pw = request.POST.get('pw')
         print(id)
         #select and compare user info
-        for u in user.objects.all():
+        for u in user.objects.filter(id = id):
             if(u.id == id and u.pw == pw):
                 request.session['login'] = u.id
                 print('login success')
