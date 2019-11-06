@@ -5,6 +5,9 @@
 	    background:url(Background.svg) no-repeat fixed;
 	    background-size: cover;
 		}
+		body::-webkit-scrollbar { 
+    		display: none; 
+		}
 		.wrapper {
 		}
 		.Pentagon {

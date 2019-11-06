@@ -3,6 +3,7 @@ body,html{
 	padding:0;
 	overflow: hidden;
 	height: 100%;
+
 }
 
 .ops-container {
@@ -24,19 +25,19 @@ body,html{
 .ops-navigation {
 	position: absolute;
 	margin: 0;
-	padding:100vh;
-	right: 0;
-	top: 0;
+	padding: 0;
+	right: 12px;
+	top: 50%;
 	z-index: 2;
 	list-style: none;
-	float: left;
+	float: right;
 	-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 			transform: translateY(-50%);
 }
 
 .ops-navigation li {
-	text-align: left;
+	text-align: center;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	padding: 0;
@@ -51,20 +52,20 @@ body,html{
 .ops-navigation a:before {
 	display: block;
 	content: ' ';
-	width: 0px;
-	height: 0px;
+	width: 4px;
+	height: 4px;
 	background: #000000;
 	border-radius: 100%;
 }
 
 .ops-navigation a.active {
-	width: 0px;
-	height: 0px;
+	width: 6px;
+	height: 6px;
 }
 .ops-navigation a.active:before {
 	width: 6px;
 	height: 6px;
-	border:0px solid black;
+	border:1px solid black;
 	background: none;
 	left: -2px;
 	position: relative;
