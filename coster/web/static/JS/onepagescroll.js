@@ -5,19 +5,19 @@
  * http://mystika.me
 */
 
-function onepagescroll(selector, options, type) {
+function onepagescroll(selector, options) {
 	var pages = [];
 	var currentPage = 1;
 	var isPageChanging = false;
 	var keyUp = {38:1,33:1};
 	var keyDown = {40:1,34:1};
-
+	
 	var def = {
 		pageContainer: 'section',
 		animationType: 'ease-in-out',
 		animationTime: 500,
 		infinite: true,
-		pagination: false,
+		pagination: true,
 		keyboard: true,
 		direction: 'vertical',
 	};
@@ -28,69 +28,6 @@ function onepagescroll(selector, options, type) {
 	function init(){
 
 		window.addEventListener('wheel',onScrollEventHandler);
-
-		css(document.querySelector(selector),{
-			transition: 'transform ' + setting.animationTime + 'ms ' + setting.animationType
-		});
-		
-		//allow keyboard input
-		if(setting.keyboard){
-			addEventListener('keydown', function(e){
-				if(keyUp[e.keyCode])
-					changePage(1,pages.length-2,-1);
-				else if(keyDown[e.keyCode])
-					changePage(pages.length-2,1,1);
-			});
-		}
-
-		document.querySelector(selector).classList.add('ops-container');
-		
-		detectTransitionEnd() && document.querySelector(selector).addEventListener(detectTransitionEnd(), function(){
-			isPageChanging = false;
-		});
-
-		var bullet_list_container = null;
-		/* create navigation bullets */
-		if(setting.pagination){
-			bullet_list_container = document.createElement("ul");
-			bullet_list_container.classList.add('ops-navigation');
-		}
-		
-		var index=1;
-		[].forEach.call(document.querySelectorAll(selector + ' > ' + setting.pageContainer), function(obj){
-			if(setting.pagination){
-				var bullet_list = document.createElement('li');
-				var bullet = document.createElement('a');
-				bullet.setAttribute('data-targetindex',index);
-				bullet.href='#';
-				bullet_list.appendChild(bullet);
-				bullet_list_container.appendChild(bullet_list);	
-			}
-
-			obj.classList.add('ops-page');
-			
-			if(setting.direction == 'horizontal'){
-				css(obj,{
-					left:(index-1)*100 + '%',
-					position:'absolute'
-				});
-			}
-
-			pages.push(obj);
-			obj.setAttribute('data-pageindex',index++);
-		});
-
-		if(setting.pagination){
-			document.body.appendChild(bullet_list_container);
-			document.querySelector('a[data-targetindex="' + currentPage +'"]').classList.add('active');
-		}
-
-		
-	}
-
-	function initAfterSubmit(){
-
-		window.addEventListener('wheel',onScrollEventHandlerAfterSubmit);
 
 		css(document.querySelector(selector),{
 			transition: 'transform ' + setting.animationTime + 'ms ' + setting.animationType
@@ -147,18 +84,12 @@ function onepagescroll(selector, options, type) {
 			document.body.appendChild(bullet_list_container);
 			document.querySelector('a[data-targetindex="' + currentPage +'"]').classList.add('active');
 		}
+
+		
 	}
 
 	/* wheel event handler */
 	function onScrollEventHandler(e){
-        if(e.wheelDelta > 0)
-        	changePage(1,pages.length-2,-1);
-        else
-        	changePage(pages.length-2,1,1);
-	}
-
-	/* wheel event handler */
-	function onScrollEventHandlerAfterSubmit(e){
         if(e.wheelDelta > 0)
         	changePage(1,pages.length,-1);
         else
@@ -267,20 +198,9 @@ function onepagescroll(selector, options, type) {
 
 
 	/* check documents ready statement and do init() */
-	if(document.readyState === 'complete'){
-		if(type=='0'){
-			init();
-		}
-		else{
-			initAfterSubmit();
-		}
-	}
-	else{
-		if(type=='0'){
-			window.addEventListener('onload', init(), false);
-		}
-		else {
-			window.addEventListener('onload', initAfterSubmit(), false);
-		}
-	}
+	if(document.readyState === 'complete')
+		init();
+	else
+		window.addEventListener('onload', init(), false);
+	
 }

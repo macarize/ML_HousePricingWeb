@@ -18,6 +18,9 @@
 	    background:url({% static "consultantBackground.svg" %}) no-repeat fixed;
 	    background-size: cover;
 		}
+		body::-webkit-scrollbar {
+    		display: none;
+		}
 	</style>
 	<style type="text/css">
 		.flash-bang {
@@ -179,7 +182,7 @@
 	            <input type="text" id="floor" name="floor" value="">
 	            <input type="text" id="rooms" name="rooms" value="">
 	            <input type="text" id="years" name="years" value="">
-				<button class="submit" type="button">GO</button>
+							<button class="submit" type="button">GO</button>
 				</form>
 			</div>
 		</div>
