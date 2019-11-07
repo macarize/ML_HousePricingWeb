@@ -98,15 +98,29 @@ function onepagescroll(selector, options, type) {
 		if(setting.keyboard){
 			addEventListener('keydown', function(e){
 				if(keyUp[e.keyCode])
-					changePage(1,pages.length-2,-1);
+					changePage(1,pages.length,-1);
 				else if(keyDown[e.keyCode])
-					changePage(pages.length-2,1,1);
+					changePage(pages.length,1,1);
 			});
 		}
 		
 		detectTransitionEnd() && document.querySelector(selector).addEventListener(detectTransitionEnd(), function(){
 			isPageChanging = false;
 		});	
+
+		var index=1;
+		[].forEach.call(document.querySelectorAll(selector + ' > ' + setting.pageContainer), function(obj){
+
+			if(setting.direction == 'horizontal'){
+				css(obj,{
+					left:(index-1)*100 + '%',
+					position:'absolute'
+				});
+			}
+
+			pages.push(obj);
+			obj.setAttribute('data-pageindex',index++);
+		});
 	}
 
 	/* wheel event handler */
