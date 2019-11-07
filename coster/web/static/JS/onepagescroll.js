@@ -5,7 +5,7 @@
  * http://mystika.me
 */
 
-function onepagescroll(selector, options) {
+function onepagescroll(selector, options, type) {
 	var pages = [];
 	var currentPage = 1;
 	var isPageChanging = false;
@@ -37,9 +37,9 @@ function onepagescroll(selector, options) {
 		if(setting.keyboard){
 			addEventListener('keydown', function(e){
 				if(keyUp[e.keyCode])
-					changePage(1,pages.length,-1);
+					changePage(1,pages.length-2,-1);
 				else if(keyDown[e.keyCode])
-					changePage(pages.length,1,1);
+					changePage(pages.length-2,1,1);
 			});
 		}
 
@@ -83,13 +83,41 @@ function onepagescroll(selector, options) {
 		if(setting.pagination){
 			document.body.appendChild(bullet_list_container);
 			document.querySelector('a[data-targetindex="' + currentPage +'"]').classList.add('active');
-		}
+		}	
+	}
 
+	function initAfterSubmit(){
+		currentPage = 2;
+		window.addEventListener('wheel',onScrollEventHandlerAfterSubmit);
+
+		css(document.querySelector(selector),{
+			transition: 'transform ' + setting.animationTime + 'ms ' + setting.animationType
+		});
 		
+		//allow keyboard input
+		if(setting.keyboard){
+			addEventListener('keydown', function(e){
+				if(keyUp[e.keyCode])
+					changePage(1,pages.length-2,-1);
+				else if(keyDown[e.keyCode])
+					changePage(pages.length-2,1,1);
+			});
+		}
+		
+		detectTransitionEnd() && document.querySelector(selector).addEventListener(detectTransitionEnd(), function(){
+			isPageChanging = false;
+		});	
 	}
 
 	/* wheel event handler */
 	function onScrollEventHandler(e){
+        if(e.wheelDelta > 0)
+        	changePage(1,pages.length-2,-1);
+        else
+        	changePage(pages.length-2,1,1);
+	}
+
+	function onScrollEventHandlerAfterSubmit(e){
         if(e.wheelDelta > 0)
         	changePage(1,pages.length,-1);
         else
@@ -198,9 +226,22 @@ function onepagescroll(selector, options) {
 
 
 	/* check documents ready statement and do init() */
-	if(document.readyState === 'complete')
-		init();
-	else
-		window.addEventListener('onload', init(), false);
-	
+	if(document.readyState === 'complete'){
+		if(type==0){
+			init();
+		} 
+		else {
+			initAfterSubmit();
+			changePage(pages.length,1,1);
+		}
+	}
+	else{
+		if(type==0){
+			window.addEventListener('onload', init(), false);	
+		}
+		else {
+			window.addEventListener('onload', initAfterSubmit(), false);	
+			window.addEventListener('onload', changePage(pages.length,1,1), false);	
+		}
+	}
 }
