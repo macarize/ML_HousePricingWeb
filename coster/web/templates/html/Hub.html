@@ -19,11 +19,32 @@
 			  pagination: true,             //set show or hide pagination element.
 			  keyboard: true,               //allow up/page-up and down/page-down key for page scroll
 			  direction: 'vertical'         //determine direction of page scroll. options available are 'vertical' and 'horizontal'
-			});
+			},0);
+		});
+		var searchValue = $('#scroll').val();
+
+		function checkSearchChanged() {
+		    var currentValue = $('#scroll').val();
+		    if ((currentValue) && currentValue != searchValue && currentValue != '0') {
+		    	searchValue = $('#scroll').val();
+		       		onepagescroll('div.pages',{
+			    	animationType: 'ease-in-out', //determine css3 animation that will run when page changes
+			     	                           //ex) 'ease', 'ease-out-in', 'cubic-bezier(0.2, 0.75, 0.5, 1.15)'
+			    	animationTime: 700,           //define how long each page takes to animate, 0 for off
+			    	infinite: false,               //back to the last/first page when you scroll at first/last page
+			    	pagination: true,             //set show or hide pagination element.
+			    	keyboard: true,               //allow up/page-up and down/page-down key for page scroll
+			    	direction: 'vertical'         //determine direction of page scroll. options available are 'vertical' and 'horizontal'
+				},1);
+		    }
+		    setTimeout(checkSearchChanged, 0.1);
+		}
+
+		$(function () {
+		    setTimeout(checkSearchChanged, 0.1);
 		});
 	</script>
 	<style type="text/css">
-
 		body, iframe, html {
 			margin: 0;
 			padding:0;
@@ -32,16 +53,12 @@
 			width: 100vw;
 			height: 100vh;
 		}
-		.stop-scrolling {
-		  height: 100%;
-		  overflow: hidden;
-		}
 	</style>
 </head>
 <body>
 	<div class="pages">
 		<section><iframe frameborder="0" marginheight="0" src="Intro" name="intro"></iframe></section>
-		<section><iframe  class="stop-scrolling" frameborder="0" marginheight="0" src="consultant" name="consultant"></iframe></section>
+		<section><iframe frameborder="0" marginheight="0" src="consultant" name="consultant"></iframe></section>
 		<section><iframe frameborder="0" marginheight="0" src="Results" name="Results"></iframe></section>
 		<section><iframe frameborder="0" marginheight="0" src="Seller" name="Seller"></iframe></section>
 	</div>
