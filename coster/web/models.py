@@ -24,3 +24,4 @@ class middleman(models.Model):
     phone = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
     dong = models.CharField(max_length=100)
+    img = models.CharField(max_length=100)
