@@ -131,3 +131,21 @@ def submit(request):
     result = json.dumps({'value' : result})
 
     return HttpResponse(result, content_type ="application/json")
+
+# 중개업자 이미지 테스트
+def test(request):
+    result = []
+    for item in middleman.objects.all():
+        result.append(item)
+
+    return render(request, 'test.html', {'result':result})
+
+@csrf_exempt
+def testAjax(request):
+    num = request.POST.get('num')
+
+    result = []
+    for item in middleman.objects.filter():
+        result.append(item)
+
+    return HttpResponse(result, content_type ="application/json")

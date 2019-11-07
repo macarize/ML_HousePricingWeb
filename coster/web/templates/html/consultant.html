@@ -379,25 +379,6 @@
     })
   })
 
-	// //Login Check
-	// function check(){
-	// 	if($('#login').val() != 'nologin'){
-	// 		//form안의 입력값 체크
-	// 		if($('#si').val() == '선택' || $('#gu').val() == '선택' || $('#dong').val() == '선택'){
-	// 			alert("지역을 선택해주세요");
-	// 			return false;
-	// 		}else if($('#space').val() == '' || $('#floor').val() == '' || $('#rooms').val() == '' || $('#years').val() == ''){
-	// 			alert("값을 입력해주세요")
-	// 			return false;
-	// 		}else{
-	// 			return true;
-	// 		}
-	// 	}else{
-	// 		alert("로그인이 필요한 서비스입니다");
-	// 		return false;
-	// 	}
-	// }
-
 	//ajaxSubmit
 	$('.submit').click(function(){
 		//Login Check
@@ -438,6 +419,8 @@
 				},
 				success:function(result){
 					console.log(result.value)
+					$('#scroll', parent.document).val(1);
+					console.log($('#scroll', parent.document).val());
 					$('.readonlyBox', parent.frames["Results"].document).val(result.value);
 				}
 			})

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+    .target{
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="target">
+    {% for item in result %}
+      {% if item.no <= 3 %}
+        <p>{{item.name}}</p>
+        <p>{{item.phone}}</p>
+        <p>{{item.img}}</p>
+        <p><img src="/static/IMG/{{item.img}}.jpg"></p>
+      {% endif %}
+    {% endfor %}
+
+    <button type="button" class="next">NEXT</button>
+  </div>
+</body>
+</html>
+
+<script>
+  var num = 2;
+
+  $('.next').click(function(){
+    $('.target').empty()
+    $.ajax({
+      type:'POST',
+      url:'testAjax',
+      data:{
+        'num':num
+      },
+      dataType:'json',
+      success:function(result){
+        
+
+        if(num==2){
+          num = 1;
+        }else{
+          num = 2;
+        }
+      }
+    })
+  })
+</script>
