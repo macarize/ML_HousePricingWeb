@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .models import *
 from .forms import *
 from MachineLearningMF import Main
@@ -144,8 +144,28 @@ def test(request):
 def testAjax(request):
     num = request.POST.get('num')
 
-    result = []
-    for item in middleman.objects.filter():
-        result.append(item)
+    test = []
+    if num == 1:
+        for item in middleman.objects.filter(no__lte = 3):
+            obj = {
+                'no':item.no,
+                'name':item.name,
+                'phone':item.phone,
+                'address':item.address,
+                'img':item.img
+            }
+            test.append(obj)
+    else:
+        for item in middleman.objects.filter(no__gte = 4, no__lte = 6):
+            obj = {
+                'no': item.no,
+                'name': item.name,
+                'phone': item.phone,
+                'address': item.address,
+                'img': item.img
+            }
+            test.append(obj)
 
+    result = json.dumps(test)
+    print(result)
     return HttpResponse(result, content_type ="application/json")

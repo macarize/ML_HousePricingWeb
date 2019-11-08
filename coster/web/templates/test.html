@@ -23,9 +23,8 @@
         <p><img src="/static/IMG/{{item.img}}.jpg"></p>
       {% endif %}
     {% endfor %}
-
-    <button type="button" class="next">NEXT</button>
   </div>
+  <button type="button" class="next">NEXT</button>
 </body>
 </html>
 
@@ -33,7 +32,6 @@
   var num = 2;
 
   $('.next').click(function(){
-    $('.target').empty()
     $.ajax({
       type:'POST',
       url:'testAjax',
@@ -42,7 +40,15 @@
       },
       dataType:'json',
       success:function(result){
-        
+        $('.target').empty()
+        for(var i=0; i<result.length; i++){
+          var content ='';
+          content += '<p>' + result[i].name + '</p>';
+          content += '<p>' + result[i].phone + '</p>';
+          content += '<p><img src="/static/IMG/' + result[i].img + '.jpg"></p>';
+          $('.target').append(content);
+          console.log(num)
+        }
 
         if(num==2){
           num = 1;
