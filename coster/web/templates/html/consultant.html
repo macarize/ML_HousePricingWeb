@@ -136,6 +136,9 @@
 			font-size: 2.5vh;
 			background-color: #49736b;
 		}
+		input.houseInfo {
+			padding-left: 1em;
+		}
 	</style>
 </head>
 <body>
@@ -178,10 +181,10 @@
 								<option value="빌라">&nbsp;빌라</option>
 								<option value="오피스텔">&nbsp;오피스텔</option>
 							</select>
-	            <input type="text" id="space" name="space" value="">
-	            <input type="text" id="floor" name="floor" value="">
-	            <input type="text" id="rooms" name="rooms" value="">
-	            <input type="text" id="years" name="years" value="">
+	            <input class="houseInfo" type="text" id="space" name="space" value="">
+	            <input class="houseInfo" type="text" id="floor" name="floor" value="">
+	            <input class="houseInfo" type="text" id="rooms" name="rooms" value="">
+	            <input class="houseInfo" type="text" id="years" name="years" value="">
 							<button class="submit" type="button">GO</button>
 				</form>
 			</div>
@@ -345,12 +348,12 @@
         console.log('SUCCESS')
         console.log(result.gu)
         $('#gu').empty();
-        $('#gu').append("<option>선택</option>")
+        $('#gu').append("<option>&nbsp;선택</option>")
         $('#dong').empty();
-        $('#dong').append("<option>선택</option>")
+        $('#dong').append("<option>&nbsp;선택</option>")
         for(var i=0; i<result.gu.length; i++){
           console.log(result.gu[i])
-          var option = "<option>" + result.gu[i] + "</option>";
+          var option = "<option>" + "&nbsp;" + result.gu[i] + "</option>";
           $('#gu').append(option)
         }
       }
@@ -358,7 +361,7 @@
   })
   //구 버튼 ajax 처리
   $('#gu').change(function(){
-    var data = $('#gu option:selected').val()
+    var data = $('#gu option:selected').val().trim()
     $.ajax({
       type: 'POST',
       url: 'gu',
@@ -369,10 +372,10 @@
         console.log('SUCCESS')
         console.log(result.dong)
         $('#dong').empty();
-        $('#dong').append("<option>선택</option>")
+        $('#dong').append("<option>&nbsp;선택</option>")
         for(var i=0; i<result.dong.length; i++){
           console.log(result.dong[i])
-          var option = "<option>" + result.dong[i] + "</option>";
+          var option = "<option>" + "&nbsp;" + result.dong[i] + "</option>";
           $('#dong').append(option)
         }
       }
@@ -386,7 +389,7 @@
 
 		if($('#login').val() != 'nologin'){
 			//form안의 입력값 체크
-			if($('#si').val() == '선택' || $('#gu').val() == '선택' || $('#dong').val() == '선택'){
+			if($('#si').val() == '&nbsp;선택' || $('#gu').val() == '&nbsp;선택' || $('#dong').val() == '&nbsp;선택'){
 				alert("지역을 선택해주세요");
 				check = false;
 			}else if($('#space').val() == '' || $('#floor').val() == '' || $('#rooms').val() == '' || $('#years').val() == ''){
@@ -405,7 +408,7 @@
 			var floor = $('#floor').val()
 			var rooms = $('#rooms').val()
 			var years = $('#years').val()
-			var dong = $('#dong option:selected').val()
+			var dong = $('#dong option:selected').val().trim()
 
 			$.ajax({
 				type: 'POST',
@@ -421,7 +424,7 @@
 					console.log(result.value)
 					$('#scroll', parent.document).val(1);
 					console.log($('#scroll', parent.document).val());
-					$('.readonlyBox', parent.frames["Results"].document).val(result.value);
+					$('.readonlyBox', parent.frames["Results"].document).val(Math.floor(result.value));
 				}
 			})
 		}
