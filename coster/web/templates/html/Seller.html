@@ -5,8 +5,8 @@
 	{% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="{% static "\CSS\onepagescroll.css" %}">
-		<script src="{% static "\JS\onepagescroll.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "\CSS\onepagescrollOriginal.css" %}">
+		<script src="{% static "\JS\onepagescrollOriginal.js" %}"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -203,6 +203,7 @@
 			margin: 1.5vh;
 			margin-top: 4vh;
 			border-radius: 15px;
+			overflow: hidden;
 		}
 		.SellerPicRound {
 			width: 9vh;
@@ -443,6 +444,6 @@ $(document).ready(function() {
 	  pagination: true,             //set show or hide pagination element.
 	  keyboard: true,               //allow up/page-up and down/page-down key for page scroll
 	  direction: 'horizontal'         //determine direction of page scroll. options available are 'vertical' and 'horizontal'
-	},0);
+	});
 });
 </script>
