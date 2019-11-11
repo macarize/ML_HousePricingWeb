@@ -5,6 +5,8 @@
 	{% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static "\CSS\onepagescroll.css" %}">
+		<script src="{% static "\JS\onepagescroll.js" %}"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -177,31 +179,93 @@
 		a:visited { color: white; text-decoration: none;}
 		a:hover { color: white; text-decoration: none;}
 		.test {
+			position: absolute;
+			left: 108.8vh;
+			top: 57.2vh;
+			width: 68.3vh;
+			height: 43.1vh;
+			background-color: #2D2D2D;
+			padding: 4vh;
+		}
+		.wrapper {
 			position: relative;
-			left: 113.8vh;
-			top: 58vh;
-			width: 56.3vh;
-			height: 41.1vh;
+			left: 108.8vh;
+			top: 57.2vh;
+			width: 68.3vh;
+			height: 43.1vh;
 			z-index: 5;
+			padding: 4vh;
 		}
 		.testChild {
-			position: absolute;
-			margin : 10px;
-			z-index: 5;
+			position: relative;
+			background-color: grey;
+			padding: 2vh;
+			margin: 1.5vh;
+			margin-top: 4vh;
+			border-radius: 15px;
+		}
+		.SellerPicRound {
+			width: 9vh;
+			height: 9vh;
+			border-radius: 50%;
+		}
+		.SellerPic {
+			float: left;
+		}
+		.SellerInfo {
+			padding-left: 10vh;
+			color: white;
+		}
+		.SellerInfo > p {
+			margin-left: 2vh;
 		}
 	</style>
 </head>
 <body>
-	<div class="test">
-		<div class="testChild"><p>안녕</p></div>
+	<div class="pages">
+		<section>
+		<div class="wrapper">
+				<div class="testChild">
+					<div class="SellerPic"><img class='SellerPicRound' src="{% static "\IMG\middleman1.jpg" %}"></div>
+					<div class="SellerInfo">
+						<p>한화부동산</p>
+						<p>전화번호 : 010-3061-5027</p>
+						<p>전화번호 : 010-3061-5027</p>
+					</div>
+				</div>
+				<div class="testChild">
+					<div class="SellerPic"><img class='SellerPicRound' src="{% static "\IMG\middleman1.jpg" %}"></div>
+					<div class="SellerInfo">
+						<p>한화부동산</p>
+						<p>전화번호 : 010-3061-5027</p>
+						<p>전화번호 : 010-3061-5027</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+		<div class="wrapper">
+				<div class="testChild">
+					<div class="SellerPic"><img class='SellerPicRound' src="{% static "\IMG\middleman1.jpg" %}"></div>
+					<div class="SellerInfo">
+						<p>한화부동산</p>
+						<p>전화번호 : 010-3061-5027</p>
+						<p>전화번호 : 010-3061-5027</p>
+					</div>
+				</div>
+				<div class="testChild">
+					<div class="SellerPic"><img class='SellerPicRound' src="{% static "\IMG\middleman1.jpg" %}"></div>
+					<div class="SellerInfo">
+						<p>한화부동산</p>
+						<p>전화번호 : 010-3061-5027</p>
+						<p>전화번호 : 010-3061-5027</p>
+					</div>
+				</div>
+			</div>
+		</section>
 	</div>
 	<a href='#' id="ajaxlogout"><img class='Logout4' src="{% static "\Resource\AI\Seller\SVG\Asset_6.svg" %}"></a>
-
 	<div><img class='dia' src="{% static "\Resource\AI\Seller\SVG\Asset_4.svg" %}"></div>
-	<div class="SWrapper">
-		<img class='suggest' src="{% static "\Resource\AI\Seller\SVG\Asset_7.svg" %}">
-		<p>안녕하세여</p>
-	</div>
 	<div><img class='LogoW' src="{% static "\Resource\AI\Results\SVG\Asset_6.png" %}"></div>
 	<div><img class='SBox' src="{% static "\Resource\AI\Seller\SVG\Asset_1.svg" %}"></div>
 	<div><img class='SDeco' src="{% static "\Resource\AI\Seller\SVG\Asset_3.svg" %}"></div>
@@ -286,9 +350,8 @@ $('#ajaxlogin').click(function(){
 				$('.Logout2', parent.frames["consultant"].document).css("z-index", "1");
 				$('.Logout3', parent.frames["Results"].document).css("display", "block");
 				$('.Logout4').css("display", "block");
-
 				$('#login', parent.frames["consultant"].document).val(result.login)
-			}else{
+			} else {
 				alert('Login Fail')
 			}
 		}
@@ -345,7 +408,6 @@ $('#ajaxlogout').click(function(){
 					$('.Logout2', parent.frames["consultant"].document).css("display", "none");
 					$('.Logout3', parent.frames["Results"].document).css("display", "none");
 					$('.Logout4').css("display", "none");
-
 					$('#login', parent.frames["consultant"].document).val('nologin')
 				}
 			})
@@ -370,4 +432,17 @@ $('.FindLoc').click(function(){
 		})
 	})
 })
+</script>
+<script type="text/javascript">	
+$(document).ready(function() {
+	onepagescroll('div.pages',{
+	  animationType: 'ease-in-out', //determine css3 animation that will run when page changes
+			                                //ex) 'ease', 'ease-out-in', 'cubic-bezier(0.2, 0.75, 0.5, 1.15)'
+	  animationTime: 700,           //define how long each page takes to animate, 0 for off
+	  infinite: false,               //back to the last/first page when you scroll at first/last page
+	  pagination: true,             //set show or hide pagination element.
+	  keyboard: true,               //allow up/page-up and down/page-down key for page scroll
+	  direction: 'horizontal'         //determine direction of page scroll. options available are 'vertical' and 'horizontal'
+	},0);
+});
 </script>
