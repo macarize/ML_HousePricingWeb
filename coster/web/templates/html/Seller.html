@@ -435,7 +435,38 @@ $('.FindLoc').click(function(){
 			oncomplete: function(data){
 				$('.location').val(data.address);
 				$('.locationD').val(data.buildingName);
-			}
+				console.log(data.bname)
+				//주소별 중개업자 출력
+				$.ajax({
+					type:'POST',
+					url:'middlemanAjax',
+					data:{
+						'dong':data.bname
+					},
+					dataType:'json',
+					success:function(result){
+						for(var i=0; i<result.length; i=i+2){
+							console.log(i)
+							var content ='';
+							content += '<div class="testChild">'
+							content += '<div class="SellerPic"><img class="SellerPicRound" src="/static/IMG/' + result[i].img + '.jpg" %}"></div>'
+							content += '<div class="SellerInfo">'
+							content += '<p>' + result[i].name + '</p>';
+							content += '<p>' + result[i].phone + '</p>';
+							content += '</div>'
+							content += '</div>'
+							content += '<div class="testChild">'
+							content += '<div class="SellerPic"><img class="SellerPicRound" src="/static/IMG/' + result[i+1].img + '.jpg" %}"></div>'
+							content += '<div class="SellerInfo">'
+							content += '<p>' + result[i+1].name + '</p>';
+							content += '<p>' + result[i+1].phone + '</p>';
+							content += '</div>'
+							content += '</div>'
+							$('#wrapper').prepend(content);
+					}
+				}
+			})
+		}
 		}).open({
 			left:(window.screen.width / 2) - (width / 2),
 			top:(window.screen.height / 2) - (height / 2)

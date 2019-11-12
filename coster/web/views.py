@@ -132,6 +132,26 @@ def submit(request):
 
     return HttpResponse(result, content_type ="application/json")
 
+# 동별 중개업자 출력
+@csrf_exempt
+def middlemanAjax(request):
+    dong = request.POST.get('dong')
+
+    items = []
+    for item in middleman.objects.filter(dong=dong):
+        obj = {
+            'no': item.no,
+            'name': item.name,
+            'phone': item.phone,
+            'address': item.address,
+            'img': item.img
+        }
+        items.append(obj)
+
+    result = json.dumps(items)
+    print(result)
+    return HttpResponse(result, content_type ="application/json")
+
 # 중개업자 이미지 테스트
 def test(request):
     result = []
