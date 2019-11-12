@@ -222,10 +222,7 @@
 		.SellerInfo > p {
 			margin-left: 2vh;
 		}
-		.scrolldown {
-			position: absolute;
-			z-index: 50;
-		}
+
 	</style>
 </head>
 <body>
@@ -273,7 +270,6 @@
 				</div>
 			</div>
 	</div>
-	<button class="scrolldown" onclick="scrolldown()">scrolldown</button>
 	<a href='#' id="ajaxlogout"><img class='Logout4' src="{% static "\Resource\AI\Seller\SVG\Asset_6.svg" %}"></a>
 	<div><img class='dia' src="{% static "\Resource\AI\Seller\SVG\Asset_4.svg" %}"></div>
 	<div><img class='LogoW' src="{% static "\Resource\AI\Results\SVG\Asset_6.png" %}"></div>
@@ -489,4 +485,30 @@ function scrolldown() {
     }, 1000);
     return false;
 }
+
+var scrollValue = 0;
+function scrolldown() {
+	if(scrollValue < 500) {
+    	scrollValue = scrollValue + 150;
+   		$("#wrapper").animate({ scrollTop: scrollValue }, 600);
+	}
+    return false;
+}
+
+function scrollup() {
+	if(scrollValue > 0) {
+		scrollValue = scrollValue - 150;
+	    $("#wrapper").animate({ scrollTop: scrollValue }, 600);
+	}
+	return false;
+}
+$("#wrapper").on('mousewheel',function(e){ 
+    var wheel = e.originalEvent.wheelDelta; 
+
+	if(wheel>0){                 
+	    scrollup();
+	} else { 
+	    scrolldown();
+	} 
+});
 </script>
