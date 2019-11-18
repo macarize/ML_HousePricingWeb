@@ -282,7 +282,7 @@
 		<input class='locationD formStyle' type="text">
 		<button class="FindLoc formStyle">찾기</button>
 	</div>
-	<button onclick="Toggle()"><div class="findSeller">중개업자 찾기</div></body></button>
+	<button><div class="findSeller">중개업자 찾기</div></button>
 	<div class="container"> <!-- Trigger the modal with a button -->
 	  <a href="#loginModal" role="button" data-toggle="modal">
 	  <img class='Login4' src="{% static "\Resource\AI\Results\SVG\Asset_5.svg" %}"></a>
@@ -441,7 +441,9 @@ $('.FindLoc').click(function(){
 					},
 					dataType:'json',
 					success:function(result){
-						for(var i=0; i<result.length; i=i+2){
+						$('#wrapper').empty(); //중개업자 추천 탭 비우기
+						seller() //중개업자 추천 탭 visible
+						for(var i=0; i<result.length; i++){
 							console.log(i)
 							var content ='';
 							content += '<div class="testChild">'
@@ -449,16 +451,11 @@ $('.FindLoc').click(function(){
 							content += '<div class="SellerInfo">'
 							content += '<p>' + result[i].name + '</p>';
 							content += '<p>' + result[i].phone + '</p>';
+							content += '<p>' + result[i].address + '</p>';
 							content += '</div>'
 							content += '</div>'
-							content += '<div class="testChild">'
-							content += '<div class="SellerPic"><img class="SellerPicRound" src="/static/IMG/' + result[i+1].img + '.jpg" %}"></div>'
-							content += '<div class="SellerInfo">'
-							content += '<p>' + result[i+1].name + '</p>';
-							content += '<p>' + result[i+1].phone + '</p>';
-							content += '</div>'
-							content += '</div>'
-							$('#wrapper').prepend(content);
+
+							$('#wrapper').prepend(content); //중개업자 탭에 DB에서 출력한 데이터 삽입
 					}
 				}
 			})
@@ -470,13 +467,10 @@ $('.FindLoc').click(function(){
 	})
 })
 
-function Toggle() {
+function seller() {
 	var e = document.getElementById("wrapper");
-	if(e.style.display == 'block') {
-		e.style.display = 'none';
-	} else {
-		e.style.display = 'block';
-	}
+	e.style.display = 'none';
+	e.style.display = 'block';
 }
 
 function scrolldown() {
@@ -502,13 +496,13 @@ function scrollup() {
 	}
 	return false;
 }
-$("#wrapper").on('mousewheel',function(e){ 
-    var wheel = e.originalEvent.wheelDelta; 
+$("#wrapper").on('mousewheel',function(e){
+    var wheel = e.originalEvent.wheelDelta;
 
-	if(wheel>0){                 
+	if(wheel>0){
 	    scrollup();
-	} else { 
+	} else {
 	    scrolldown();
-	} 
+	}
 });
 </script>
