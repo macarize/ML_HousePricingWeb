@@ -1,12 +1,13 @@
 from MachineLearningMF import DataInit, AddBias, GradientDescent, Normalization, Converter, runMachine
+# import DataInit, AddBias, GradientDescent, Normalization, Converter, runMachine
 import os.path
 import numpy as np
 
 def ml(year, rooms, floor, space, theta0, theta1, theta2, theta3, theta4):
     BASE = os.path.dirname(os.path.abspath(__file__))
 
-    print(os.path.join(BASE, "DataNew.csv"))
-    Path = os.path.join(BASE, "DataNew.csv")
+    print(os.path.join(BASE, "DataNew1.csv"))
+    Path = os.path.join(BASE, "DataNew1.csv")
 
     # Path = "..\MachineLearningMF\Data.txt"
 
@@ -17,8 +18,8 @@ def ml(year, rooms, floor, space, theta0, theta1, theta2, theta3, theta4):
     Norm = Normalization.Normalization()
     AddBias1 = AddBias.AddBias()
 
-    '''loac cvs'''
-    data.loader(Path)
+    '''loac csv'''
+    data.loader(Path) # ,제거
     '''theta init'''
     '''initiated optimal theta 17/9/2019'''
     # 동 별 theta값 입력 테스트
@@ -29,8 +30,8 @@ def ml(year, rooms, floor, space, theta0, theta1, theta2, theta3, theta4):
     data = AddBias1.addB(data)
     '''remove annotations when you compute theta again'''
     '''run Gradient descent and Cost function'''
-    '''theta = GDescent.runGradient(data,theta,0.0001,100000)
-    theta = theta.reshape(1, 5)'''
+    # theta = GDescent.runGradient(data,theta,0.0001,100000) #theta값 뽑아내기
+    # theta = theta.reshape(1, 5) #행렬 곱셈하기 위해 형태바꾸기
 
     '''compute housing price'''
     r = np.array([year,rooms,floor,space])
@@ -48,8 +49,6 @@ def ml(year, rooms, floor, space, theta0, theta1, theta2, theta3, theta4):
     print(theta)
     return price[0][0]
 
-
-#cl = Converter.DataLoad()
-#cl.ConvertToCSV()
-
+# cl = Converter.DataLoad()
+# cl.ConvertToCSV()
 

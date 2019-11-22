@@ -39,7 +39,7 @@
 #     target = paginates[0].find_elements_by_tag_name('a')
 #     target[-1].click()
 #
-#     for item in range(0, 5):
+#     for item in range(0, 8):
 #         print("PAGE", item + 1)
 #         tables = browser.find_elements_by_class_name('TablePaginate')
 #         paginates = tables[0].find_elements_by_class_name('Paginate')
