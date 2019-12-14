@@ -8,3 +8,6 @@ Process training data compromised with various features that crwaled from web an
 <br>-beautifulsoup
 <br>-requests
 <br>-Django
+
+<b>Design</b>
+<br>![screen](./screen.jpg)
